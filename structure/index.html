@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111211">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Структура сайта Just Point Car: какие блоки, в каком порядке и зачем нужен каждый.">
+<title>Just Point Car — структура сайта</title>
+<link rel="preload" as="font" href="../assets/oswald-semibold.ttf" type="font/ttf" crossorigin>
+<style>
+@font-face{font-family:Manrope;src:url('../assets/manrope-medium.ttf') format('truetype');font-weight:400 500;font-display:swap}
+@font-face{font-family:Manrope;src:url('../assets/manrope-bold.ttf') format('truetype');font-weight:600 800;font-display:swap}
+@font-face{font-family:Oswald;src:url('../assets/oswald-semibold.ttf') format('truetype');font-weight:600;font-display:swap}
+:root{--bg:#111211;--panel:#191b18;--text:#f3f3ec;--muted:#adafa8;--dim:#8b9083;--accent:#d8ef70;--line:#ffffff24;--page:clamp(20px,4.5vw,80px);color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 Manrope,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;letter-spacing:-.4px;line-height:1.1}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--page)}
+
+/* шапка */
+.head{border-bottom:1px solid var(--line);padding:22px 0}
+.head .wrap{display:flex;align-items:center;gap:20px}
+.logo{width:58px;height:58px;border-radius:50%;flex:none}
+.head b{display:block;font:700 11px/1.7 Manrope,sans-serif;letter-spacing:1.3px}
+.head small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.7px}
+.head a.site{margin-left:auto;font-size:12px;color:var(--accent);white-space:nowrap}
+
+/* интро */
+.intro{padding:clamp(40px,7vw,86px) 0 clamp(26px,3vw,40px)}
+.intro .eyebrow{display:flex;align-items:center;gap:10px;color:#c6c8bf;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:600;margin-bottom:24px}
+.intro .eyebrow::before{content:"";width:6px;height:6px;background:var(--accent)}
+h1{font-size:clamp(38px,6vw,76px);text-transform:uppercase}
+h1 span{color:var(--accent)}
+.lead{margin-top:22px;max-width:60ch;color:#c6c9be;font-size:clamp(15px,1.2vw,17px)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:12px;color:var(--muted)}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+.dot.plan{background:#4a4f44}
+
+/* лента блоков */
+.steps{padding-bottom:clamp(30px,5vw,60px)}
+.step{display:grid;grid-template-columns:76px 1fr;gap:clamp(14px,2vw,30px);padding:clamp(20px,2.4vw,30px) 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:1px solid #ffffff38}
+.num{font-family:Oswald,sans-serif;font-weight:600;font-size:clamp(26px,3vw,40px);color:#3f443a;line-height:1}
+.step.done .num{color:var(--accent)}
+.step h2{font-size:clamp(19px,1.9vw,26px)}
+.tag{display:inline-block;margin-left:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font:600 9px/1 Manrope,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);vertical-align:3px;white-space:nowrap}
+.step.done .tag{color:#161a0c;background:var(--accent);border-color:var(--accent)}
+.why{margin-top:12px;max-width:72ch;color:#c9ccc2}
+.need{margin-top:14px;display:flex;gap:10px;align-items:flex-start;max-width:72ch;padding:12px 16px;background:var(--panel);border-left:2px solid var(--accent);font-size:14px;color:#c2c8b6}
+.need b{color:var(--accent);font-weight:600;white-space:nowrap}
+
+/* дополнительные блоки */
+.extra{border-top:1px solid #ffffff38;padding:clamp(34px,4vw,56px) 0}
+.extra h2{font-size:clamp(22px,2.6vw,34px);text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);margin-top:26px;border:1px solid var(--line)}
+.card{background:var(--bg);padding:clamp(18px,2vw,26px)}
+.card h3{font-size:17px;margin-bottom:10px}
+.card p{font-size:14px;color:#c0c4b8}
+
+/* что нужно от вас */
+.ask{border-top:1px solid #ffffff38;padding:clamp(34px,4vw,56px) 0 clamp(50px,6vw,80px)}
+.ask h2{font-size:clamp(22px,2.6vw,34px);text-transform:uppercase}
+.ask ol{margin-top:24px;list-style:none;counter-reset:q}
+.ask li{counter-increment:q;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--line);font-size:15px;color:#d2d6ca}
+.ask li::before{content:counter(q,decimal-leading-zero);position:absolute;left:0;top:15px;font:600 12px/1 Oswald,sans-serif;color:var(--accent);letter-spacing:1px}
+.ask li small{display:block;margin-top:5px;color:var(--dim);font-size:13px}
+
+/* подвал */
+.foot{border-top:1px solid var(--line);padding:22px 0 34px;font-size:11px;color:var(--dim)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.foot a{color:var(--accent)}
+
+@media(max-width:700px){
+  .step{grid-template-columns:44px 1fr;gap:12px}
+  .tag{display:block;margin:10px 0 0;width:max-content;vertical-align:0}
+  .head small{letter-spacing:1.2px}
+  .need{flex-direction:column;gap:4px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .step,.card,.ask li{animation:up .6s cubic-bezier(.22,1,.36,1) both}
+  @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <img class="logo" src="../assets/jpc-telegram-logo.jpg" width="58" height="58" alt="Логотип Just Point Car">
+    <span><b>JUST POINT CAR</b><small>DETAILING STUDIO</small></span>
+    <a class="site" href="../" target="_blank" rel="noopener">Первый экран ↗</a>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow">Структура сайта</p>
+      <h1>Какие блоки<br><span>и зачем каждый.</span></h1>
+      <p class="lead">Страница идёт сверху вниз в&nbsp;том порядке, в&nbsp;котором её читает человек, попавший к&nbsp;вам из&nbsp;Яндекс Карт или рекламы. Сначала он&nbsp;понимает, что вы&nbsp;делаете и&nbsp;как, потом видит цены и&nbsp;оставляет заявку.</p>
+      <p class="legend">
+        <i><span class="dot"></span>уже собрано, можно посмотреть</i>
+        <i><span class="dot plan"></span>делаем дальше</i>
+      </p>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+
+      <article class="step done">
+        <div class="num">01</div>
+        <div>
+          <h2>Первый экран<span class="tag">Готово</span></h2>
+          <p class="why">Человек за&nbsp;несколько секунд понимает, что студия занимается оклейкой, и&nbsp;сразу видит вашу работу: GLC&nbsp;300 в&nbsp;полной бронеплёнке, снятый у&nbsp;вас в&nbsp;боксе. Здесь же кнопка расчёта по&nbsp;фотографиям.</p>
+          <p class="need"><b>Нужно от вас:</b> срок работы и&nbsp;гарантия на&nbsp;плёнку. У&nbsp;сильных студий Москвы эти две цифры стоят прямо в&nbsp;первом экране и&nbsp;работают лучше, чем список услуг.</p>
+        </div>
+      </article>
+
+      <article class="step done">
+        <div class="num">02</div>
+        <div>
+          <h2>Рейтинг, награда и адрес<span class="tag">Готово</span></h2>
+          <p class="why">Подтверждает, что студия настоящая и&nbsp;работает рядом: 5,0&nbsp;на&nbsp;Яндекс Картах, 56&nbsp;оценок, «Хорошее место&nbsp;2026», адрес и&nbsp;часы работы. Этот блок снимает первое недоверие к&nbsp;незнакомому сайту.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">03</div>
+        <div>
+          <h2>Три варианта защиты</h2>
+          <p class="why">Полная оклейка, зоны риска и&nbsp;фары со&nbsp;стёклами. Для каждого варианта пишем, от&nbsp;чего он&nbsp;спасает и&nbsp;сколько служит. Человек сразу выбирает по&nbsp;бюджету и&nbsp;не&nbsp;уходит думать. Здесь же называем плёнку: Spectroll premium 210&nbsp;микрон на&nbsp;кузов и&nbsp;190 на&nbsp;фары&nbsp;— такой конкретики в&nbsp;карточках конкурентов почти нет.</p>
+          <p class="need"><b>Нужно от вас:</b> цены или&nbsp;вилки «от»&nbsp;по каждому из&nbsp;трёх вариантов.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">04</div>
+        <div>
+          <h2>Почему плёнку стоит клеить сейчас</h2>
+          <p class="why">Короткий блок про зиму: реагенты, пескоструй и&nbsp;камни из-под колёс. Объясняет, почему не&nbsp;нужно ждать весны, и&nbsp;помогает человеку решиться в&nbsp;сезон, когда полировки простаивают.</p>
+          <p class="need"><b>Нужно от вас:</b> ничего, текст напишу сам.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">05</div>
+        <div>
+          <h2>Работы до и после</h2>
+          <p class="why">Галерея ваших машин, разбитая по&nbsp;услугам, с&nbsp;короткими подписями вроде «полная оклейка, 3&nbsp;дня». В&nbsp;канале уже больше четырёхсот фотографий и&nbsp;видео процесса, поэтому блок соберётся из&nbsp;того, что у&nbsp;вас есть.</p>
+          <p class="need"><b>Нужно от вас:</b> разрешение брать фотографии из&nbsp;канала и&nbsp;пять-шесть работ, которыми вы&nbsp;особенно довольны.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">06</div>
+        <div>
+          <h2>Как проходит работа</h2>
+          <p class="why">Осмотр и&nbsp;расчёт, мойка и&nbsp;подготовка лака, оклейка, выдача&nbsp;— с&nbsp;днями на&nbsp;каждом шаге. Это снимает главный страх человека перед оклейкой: на&nbsp;сколько он&nbsp;останется без&nbsp;машины и&nbsp;что вообще будет происходить.</p>
+          <p class="need"><b>Нужно от вас:</b> этапы своими словами и&nbsp;сколько времени занимает каждый.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">07</div>
+        <div>
+          <h2>Разбор одной работы с суммой</h2>
+          <p class="why">Одна конкретная машина: что&nbsp;делали и&nbsp;из&nbsp;чего сложилась итоговая сумма. Человек видит, за&nbsp;что платит, и&nbsp;перестаёт сравнивать студии по&nbsp;одной только цифре. Среди московских студий такой разбор делает почти никто, поэтому блок заметно выделяет вас.</p>
+          <p class="need"><b>Нужно от вас:</b> один заказ целиком&nbsp;— машина, перечень работ и&nbsp;итог.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">08</div>
+        <div>
+          <h2>Мастер и студия</h2>
+          <p class="why">Несколько фотографий бокса с&nbsp;сотовым потолком и&nbsp;рассказ о&nbsp;мастере. В&nbsp;отзывах на&nbsp;Картах благодарят Даниила по&nbsp;имени, и&nbsp;это стоит показать: люди охотнее везут машину к&nbsp;человеку, а&nbsp;не&nbsp;в&nbsp;безымянный сервис.</p>
+          <p class="need"><b>Нужно от вас:</b> фотография мастера, пара фраз об&nbsp;опыте и&nbsp;снимки бокса.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">09</div>
+        <div>
+          <h2>Отзывы</h2>
+          <p class="why">Живые цитаты с&nbsp;Яндекс Карт и&nbsp;ссылка на&nbsp;карточку, где их&nbsp;52. Чужие слова убеждают сильнее любого описания, а&nbsp;ссылка показывает, что отзывы настоящие и&nbsp;их&nbsp;можно проверить.</p>
+          <p class="need"><b>Нужно от вас:</b> ничего, возьму с&nbsp;вашей карточки.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">10</div>
+        <div>
+          <h2>Цены</h2>
+          <p class="why">Вилки по&nbsp;вариантам оклейки и&nbsp;пояснение, что точную сумму называете после осмотра или&nbsp;по фотографиям. Цены стоят ближе к&nbsp;концу намеренно: сначала человек видит уровень работ, и&nbsp;только потом деньги. Совсем без цен часть людей уходит к&nbsp;тем, у&nbsp;кого они есть.</p>
+          <p class="need"><b>Нужно от вас:</b> актуальный прайс. В&nbsp;Яндексе он&nbsp;помечен как давно не&nbsp;обновлявшийся, поэтому на&nbsp;сайте цен пока нет.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">11</div>
+        <div>
+          <h2>Заявка с фотографиями</h2>
+          <p class="why">Человек отправляет снимки машины и&nbsp;получает расчёт, не&nbsp;выходя из&nbsp;дома. Рядом кнопки ваших мессенджеров для тех, кому привычнее написать напрямую.</p>
+          <p class="need"><b>Нужно от вас:</b> куда отправлять заявки. Предлагаю почту хостинга: это российский сервис, и&nbsp;с&nbsp;персональными данными клиентов так спокойнее.</p>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="num">12</div>
+        <div>
+          <h2>Контакты и карта</h2>
+          <p class="why">Карта, метро, часы работы, телефоны и&nbsp;объяснение, как заехать. Последний блок, который убирает причины не&nbsp;доехать.</p>
+          <p class="need"><b>Нужно от вас:</b> точный корпус и&nbsp;какой телефон главный. В&nbsp;карточке Карт стоит 41с41, в&nbsp;описании канала&nbsp;— 41с40, а&nbsp;номеров указано три.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="extra">
+    <div class="wrap">
+      <h2>Что добавим отдельно</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Подарочные сертификаты</h3>
+          <p>У&nbsp;вас они уже есть в&nbsp;услугах. Перед Новым годом это живая тема: человек покупает уход в&nbsp;подарок и&nbsp;приводит к&nbsp;вам нового клиента.</p>
+        </div>
+        <div class="card">
+          <h3>Остальные услуги</h3>
+          <p>Химчистка, полировка с&nbsp;керамикой, тонировка, антихром и&nbsp;полировка фар компактным блоком: оклейка остаётся главной, но&nbsp;человек видит, что вы&nbsp;закрываете весь уход.</p>
+        </div>
+        <div class="card">
+          <h3>Частые вопросы</h3>
+          <p>Можно&nbsp;ли мыть машину после оклейки, сколько держится плёнка, снимается&nbsp;ли она без следов и&nbsp;что входит в&nbsp;гарантию.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask">
+    <div class="wrap">
+      <h2>Что нужно от вас</h2>
+      <ol>
+        <li>Цены или&nbsp;вилки «от»: полная оклейка, зоны риска, фары.<small>Без них сайт не&nbsp;сможет отвечать на&nbsp;первый вопрос человека.</small></li>
+        <li>Сроки: сколько дней занимает полная оклейка и&nbsp;сколько&nbsp;— зоны риска.</li>
+        <li>Гарантия: на&nbsp;плёнку и&nbsp;на&nbsp;работу.</li>
+        <li>Один заказ целиком для разбора с&nbsp;суммой.<small>Машина, перечень работ и&nbsp;итоговая цифра.</small></li>
+        <li>Фотографии мастера и&nbsp;бокса, пара фраз об&nbsp;опыте.</li>
+        <li>Точный адрес и&nbsp;въезд: 41с41 или 41с40.</li>
+        <li>Какой из&nbsp;трёх телефонов главный.</li>
+        <li>Куда отправлять заявки с&nbsp;сайта.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Just Point Car&nbsp;© 2026&nbsp;· Структура сайта</span>
+    <span>Демонстрационный материал, не&nbsp;официальный сайт студии</span>
+    <a href="../" target="_blank" rel="noopener">Посмотреть первый экран ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
