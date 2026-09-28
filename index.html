@@ -386,6 +386,25 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 .soc a:hover{border-color:var(--led);box-shadow:0 0 22px -8px var(--glow)}
 .soc svg{width:17px;height:17px}
 
+/* значок награды */
+.wreath{position:relative;display:inline-flex;align-items:center;justify-content:center;width:clamp(164px,14.5vw,208px);aspect-ratio:1}
+.wreath .wr{position:absolute;inset:0;width:100%;height:100%;color:#e7d6a8}
+.wr-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;padding-top:10px}
+.wr-in b{font:700 clamp(34px,3.7vw,46px)/1 var(--disp);letter-spacing:.01em;
+  background:linear-gradient(180deg,#fff 30%,#c9ccd2 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wr-in i{font-style:normal;color:#ffd166;font-size:12px;letter-spacing:2px}
+.award{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 15px;border:1px solid rgba(231,214,168,.42);border-radius:999px;
+  font:500 10.5px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:#e7d6a8;white-space:nowrap}
+.award svg{width:13px;height:13px;flex:none}
+
+/* карта */
+.map{position:relative;border:1px solid var(--line);background:var(--bg-2);overflow:hidden;min-height:clamp(420px,46vw,600px);box-shadow:0 40px 90px -50px #000}
+.map iframe{display:block;width:100%;height:100%;min-height:clamp(420px,46vw,600px);border:0}
+.map .ph{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;background:var(--bg-2)}
+.map .ph p{font-size:13.5px;color:var(--dim);max-width:32ch}
+.map iframe{position:relative;z-index:1}
+.contact-b{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;margin-top:clamp(20px,2.4vw,30px)}
+
 /* подвал */
 .foot{padding:clamp(34px,4vw,54px) var(--pad) 0;border-top:1px solid var(--line);background:#09090a}
 .foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,3vw,48px)}
@@ -396,7 +415,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 .foot .demo{max-width:none;margin-top:clamp(28px,3vw,42px);border-top:1px solid var(--line);background:#09090a;color:var(--dim);font-size:11.5px;line-height:1.55}
 
 @media (max-width:1100px){
-  .two,.contact{grid-template-columns:1fr}
+  .two,.contact,.contact-b{grid-template-columns:1fr}
   .two.rev-order .txt{order:0}
   .two .shot{max-width:560px;width:100%}
   .t4,.works{grid-template-columns:repeat(2,1fr)}
@@ -543,15 +562,47 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 <!-- ===== НАГРАДА И РЕЙТИНГ ===== -->
 <section class="sec alt" id="reputaciya">
   <div class="wrap">
-    <p class="kick">Хорошее место 2026</p>
+    <p class="kick">Награда Яндекс Карт</p>
     <h2>Награда Яндекс&nbsp;Карт за&nbsp;оценки клиентов</h2>
     <p class="lead">Её получают организации, которым пользователи Яндекса ставят самые высокие оценки. У&nbsp;студии 5,0 из&nbsp;5,0, 56&nbsp;оценок и&nbsp;52&nbsp;отзыва&nbsp;— ни&nbsp;одного ниже пяти звёзд за&nbsp;всё время.</p>
 
     <div class="score">
       <div class="big">
-        <b>5,0</b>
-        <i>★★★★★</i>
+        <span class="wreath">
+          <svg class="wr" viewBox="0 0 140 140" fill="currentColor" aria-hidden="true">
+      <path d="M70 5 72.2 11.4l6.8.2-5.4 4.1 2 6.5-5.6-3.9-5.6 3.9 2-6.5-5.4-4.1 6.8-.2z" opacity=".95"/>
+      <path d="M51.6 13.4 L41.8 17.6 L32.9 23.5 L25.2 30.9 L18.9 39.5 L14.3 49.1 L11.5 59.4 L10.5 70.0 L11.5 80.6 L14.3 90.9 L18.9 100.5 L25.2 109.1 L32.9 116.5 L41.8 122.4 L51.6 126.6" fill="none" stroke="currentColor" stroke-width="1.05" opacity=".45" stroke-linecap="round"/>
+      <ellipse cx="49.8" cy="19.9" rx="1.9" ry="5.0" transform="rotate(13.0 49.8 19.9)" opacity="0.40"/>
+      <ellipse cx="39.0" cy="26.7" rx="2.8" ry="7.5" transform="rotate(-0.6 39.0 26.7)" opacity="0.66"/>
+      <ellipse cx="29.9" cy="35.4" rx="3.2" ry="8.8" transform="rotate(-14.2 29.9 35.4)" opacity="0.79"/>
+      <ellipse cx="23.1" cy="45.9" rx="3.6" ry="9.7" transform="rotate(-27.8 23.1 45.9)" opacity="0.88"/>
+      <ellipse cx="18.9" cy="57.6" rx="3.7" ry="10.2" transform="rotate(-41.4 18.9 57.6)" opacity="0.93"/>
+      <ellipse cx="17.5" cy="70.0" rx="3.8" ry="10.4" transform="rotate(-55.0 17.5 70.0)" opacity="0.95"/>
+      <ellipse cx="18.9" cy="82.4" rx="3.7" ry="10.2" transform="rotate(-68.6 18.9 82.4)" opacity="0.93"/>
+      <ellipse cx="23.1" cy="94.1" rx="3.6" ry="9.7" transform="rotate(-82.2 23.1 94.1)" opacity="0.88"/>
+      <ellipse cx="29.9" cy="104.6" rx="3.2" ry="8.8" transform="rotate(-95.8 29.9 104.6)" opacity="0.79"/>
+      <ellipse cx="39.0" cy="113.3" rx="2.8" ry="7.5" transform="rotate(-109.4 39.0 113.3)" opacity="0.66"/>
+      <ellipse cx="49.8" cy="120.1" rx="1.9" ry="5.0" transform="rotate(-123.0 49.8 120.1)" opacity="0.40"/>
+      <path d="M88.4 13.4 L98.2 17.6 L107.1 23.5 L114.8 30.9 L121.1 39.5 L125.7 49.1 L128.5 59.4 L129.5 70.0 L128.5 80.6 L125.7 90.9 L121.1 100.5 L114.8 109.1 L107.1 116.5 L98.2 122.4 L88.4 126.6" fill="none" stroke="currentColor" stroke-width="1.05" opacity=".45" stroke-linecap="round"/>
+      <ellipse cx="90.2" cy="19.9" rx="1.9" ry="5.0" transform="rotate(-13.0 90.2 19.9)" opacity="0.40"/>
+      <ellipse cx="101.0" cy="26.7" rx="2.8" ry="7.5" transform="rotate(0.6 101.0 26.7)" opacity="0.66"/>
+      <ellipse cx="110.1" cy="35.4" rx="3.2" ry="8.8" transform="rotate(14.2 110.1 35.4)" opacity="0.79"/>
+      <ellipse cx="116.9" cy="45.9" rx="3.6" ry="9.7" transform="rotate(27.8 116.9 45.9)" opacity="0.88"/>
+      <ellipse cx="121.1" cy="57.6" rx="3.7" ry="10.2" transform="rotate(41.4 121.1 57.6)" opacity="0.93"/>
+      <ellipse cx="122.5" cy="70.0" rx="3.8" ry="10.4" transform="rotate(55.0 122.5 70.0)" opacity="0.95"/>
+      <ellipse cx="121.1" cy="82.4" rx="3.7" ry="10.2" transform="rotate(68.6 121.1 82.4)" opacity="0.93"/>
+      <ellipse cx="116.9" cy="94.1" rx="3.6" ry="9.7" transform="rotate(82.2 116.9 94.1)" opacity="0.88"/>
+      <ellipse cx="110.1" cy="104.6" rx="3.2" ry="8.8" transform="rotate(95.8 110.1 104.6)" opacity="0.79"/>
+      <ellipse cx="101.0" cy="113.3" rx="2.8" ry="7.5" transform="rotate(109.4 101.0 113.3)" opacity="0.66"/>
+      <ellipse cx="90.2" cy="120.1" rx="1.9" ry="5.0" transform="rotate(123.0 90.2 120.1)" opacity="0.40"/>
+    </svg>
+          <span class="wr-in"><b>5,0</b><i>★★★★★</i></span>
+        </span>
         <small>56&nbsp;оценок · 52&nbsp;отзыва</small>
+        <span class="award">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.4 13.4 6.5 21l5.5-2.8L17.5 21l-1.9-7.6"/></svg>
+          Хорошее место 2026
+        </span>
       </div>
       <ul class="bars">
         <li><span>Мойка</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 34&nbsp;отзыва</em></li>
@@ -899,6 +950,28 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
     <p class="kick">Записаться</p>
     <h2>Оставьте заявку&nbsp;— посчитаем и&nbsp;перезвоним</h2>
     <div class="contact">
+    <form class="form" style="margin-top:0" novalidate>
+      <div class="row">
+        <label class="field"><span>Как вас зовут</span><input type="text" name="name2" autocomplete="name" placeholder="Имя"></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone2" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+      </div>
+      <label class="field"><span>Марка и модель</span><input type="text" name="car2" placeholder="Например, BMW X5"></label>
+      <label class="field"><span>Что нужно сделать</span><textarea name="task" placeholder="Коротко: оклейка зон риска, химчистка, полировка с керамикой…"></textarea></label>
+      <label class="agree"><input type="checkbox" name="agree2"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
+      <button class="btn btn-main" type="button" data-open="calc">Отправить заявку</button>
+      <p class="note">Демонстрационный макет: данные никуда не&nbsp;уходят.</p>
+      </form>
+
+      <div class="map">
+        <div class="ph">
+          <p>Москва, ул.&nbsp;Талалихина, 41,&nbsp;стр.&nbsp;41 — 930&nbsp;м от&nbsp;м.&nbsp;Волгоградский проспект</p>
+          <a class="btn-o" href="https://yandex.ru/maps/org/just_point_car/222922385914/" target="_blank" rel="noopener">Открыть в&nbsp;Яндекс&nbsp;Картах</a>
+        </div>
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.684659%2C55.730305&amp;z=16&amp;mode=search&amp;oid=222922385914&amp;ol=biz" title="Just Point Car на карте: Москва, улица Талалихина, 41, строение 41" width="600" height="500" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-b">
       <div>
         <ul class="clist">
           <li>
@@ -918,27 +991,16 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
             <div><b><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">5,0 на&nbsp;Яндекс&nbsp;Картах</a></b><span>56&nbsp;оценок, 52&nbsp;отзыва, «Хорошее место&nbsp;2026»</span></div>
           </li>
         </ul>
+        <p class="lead" style="font-size:12.5px;margin-top:18px">В&nbsp;описании Telegram-канала адрес указан как 41,&nbsp;стр.&nbsp;40. На&nbsp;сайте использован адрес из&nbsp;карточки Яндекс&nbsp;Карт&nbsp;— 41,&nbsp;стр.&nbsp;41; перед первым визитом лучше уточнить у&nbsp;студии.</p>
+      </div>
+      <div>
         <div class="soc">
           <a href="https://t.me/Justpointcar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Запись в&nbsp;Telegram</a>
           <a href="https://t.me/JPCDetailing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Канал с&nbsp;работами</a>
           <a href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Канал в&nbsp;MAX</a>
         </div>
-        <p class="lead" style="font-size:12.5px;margin-top:18px">В&nbsp;описании Telegram-канала адрес указан как 41,&nbsp;стр.&nbsp;40. На&nbsp;сайте использован адрес из&nbsp;карточки Яндекс&nbsp;Карт&nbsp;— 41,&nbsp;стр.&nbsp;41; перед первым визитом лучше уточнить у&nbsp;студии.</p>
       </div>
-
-      <form class="form" style="margin-top:0" novalidate>
-        <div class="row">
-          <label class="field"><span>Как вас зовут</span><input type="text" name="name2" autocomplete="name" placeholder="Имя"></label>
-          <label class="field"><span>Телефон</span><input type="tel" name="phone2" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
-        </div>
-        <label class="field"><span>Марка и модель</span><input type="text" name="car2" placeholder="Например, BMW X5"></label>
-        <label class="field"><span>Что нужно сделать</span><textarea name="task" placeholder="Коротко: оклейка зон риска, химчистка, полировка с керамикой…"></textarea></label>
-        <label class="agree"><input type="checkbox" name="agree2"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
-        <button class="btn btn-main" type="button" data-open="calc">Отправить заявку</button>
-        <p class="note">Демонстрационный макет: данные никуда не&nbsp;уходят.</p>
-      </form>
     </div>
-  </div>
 </section>
 
 </main>
