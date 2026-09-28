@@ -1,2 +1,11 @@
+# Демонстрационный макет на техническом адресе — от поиска закрыт.
+# На боевом домене заменить этот файл на блок ниже (снять решётки),
+# а из index.html убрать <meta name="robots" content="noindex, nofollow">.
+
 User-agent: *
 Disallow: /
+
+# User-agent: *
+# Allow: /
+# Sitemap: https://ДОМЕН/sitemap.xml
+# Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
