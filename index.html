@@ -345,6 +345,8 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 
 /* работы */
 .works{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.work.wide{grid-column:span 2;aspect-ratio:3/2}
+.work.wide img{object-position:50% 42%}
 .work{position:relative;border:1px solid var(--line);background:var(--bg-2);overflow:hidden;aspect-ratio:3/4}
 .work img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.82) contrast(1.05);transition:filter .5s,transform .7s cubic-bezier(.2,.7,.2,1)}
 .work:hover img{filter:saturate(1.04) brightness(.98);transform:scale(1.05)}
@@ -423,6 +425,49 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
   font:500 10.5px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:#e7d6a8;white-space:nowrap}
 .award svg{width:13px;height:13px;flex:none}
 
+/* полоса-врезка во всю ширину: пауза в ритме страницы */
+.band{position:relative;padding:clamp(54px,7vw,96px) var(--pad);background:
+  radial-gradient(70% 120% at 50% 0%,rgba(231,214,168,.10),transparent 62%),
+  linear-gradient(180deg,#101012,#0a0a0b 70%)}
+.band::before,.band::after{content:"";position:absolute;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(231,214,168,.45) 20%,rgba(231,214,168,.45) 80%,transparent)}
+.band::before{top:0}.band::after{bottom:0}
+.band .wrap{max-width:1080px;text-align:center}
+.band .kick{color:#c2b189}
+.band .kick::before{background:rgba(231,214,168,.6)}
+.band h2{background:linear-gradient(180deg,#fff 28%,#e7d6a8 120%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.band .lead{margin:18px auto 0;text-align:center;max-width:64ch}
+.band .say{margin:26px auto 0;max-width:56ch;padding:20px 24px;border:1px solid rgba(231,214,168,.28);
+  background:rgba(231,214,168,.045);font-size:15.5px;line-height:1.6;color:#ded9cd}
+.band .say b{display:block;margin-top:10px;font:500 11px/1 var(--disp);letter-spacing:.18em;text-transform:uppercase;color:#a99a76}
+.band .pts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;text-align:left}
+.band .pts li{padding:20px 22px;border:1px solid var(--line);background:rgba(12,12,14,.7)}
+.band .pts b{display:block;font:600 15px/1.25 var(--disp);letter-spacing:.03em}
+.band .pts span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted)}
+
+/* до / после */
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,30px);margin-top:34px}
+.pair figure{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3px;border:1px solid var(--line);background:var(--line);overflow:hidden}
+.pair figure div{position:relative;aspect-ratio:3/4;overflow:hidden}
+.pair img{width:100%;height:100%;object-fit:cover;display:block}
+.pair .l{position:absolute;left:10px;top:10px;z-index:2;padding:6px 11px;border-radius:999px;
+  font:500 10px/1 var(--disp);letter-spacing:.18em;text-transform:uppercase;background:rgba(8,8,9,.72);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--line-2)}
+.pair .l.a{color:#e7d6a8;border-color:rgba(231,214,168,.5)}
+.pair figcaption{margin-top:12px;font-size:13.5px;color:var(--muted)}
+.pair figcaption b{color:var(--text);font-weight:600}
+
+/* мастер: портрет-кадр рядом с цитатой */
+.who-card{display:flex;gap:18px;align-items:center;margin-top:26px;padding:18px;border:1px solid var(--line);background:var(--bg-2)}
+.who-card img{width:104px;height:132px;flex:none;object-fit:cover;object-position:50% 22%;border:1px solid var(--line-2);filter:saturate(.95) contrast(1.04)}
+.who-card p{font-size:14px;line-height:1.55;color:#d8d8d6}
+.who-card small{display:block;margin-top:10px;font-size:11.5px;color:var(--dim);line-height:1.45}
+
+/* появление секций при прокрутке */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
 /* карта */
 .map{position:relative;border:1px solid var(--line);background:var(--bg-2);overflow:hidden;min-height:clamp(420px,46vw,600px);box-shadow:0 40px 90px -50px #000}
 .map iframe{display:block;width:100%;height:100%;min-height:clamp(420px,46vw,600px);border:0}
@@ -441,16 +486,21 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 .foot .demo{max-width:none;margin-top:clamp(28px,3vw,42px);border-top:1px solid var(--line);background:#09090a;color:var(--dim);font-size:11.5px;line-height:1.55}
 
 @media (max-width:1100px){
-  .two,.contact,.contact-b{grid-template-columns:1fr}
+  .two,.contact,.contact-b,.pairs{grid-template-columns:1fr}
+  .band .pts{grid-template-columns:1fr}
   .two.rev-order .txt{order:0}
   .two .shot{max-width:560px;width:100%}
   .t4,.works{grid-template-columns:repeat(2,1fr)}
+  .work.wide{aspect-ratio:16/10}
   .revs{grid-template-columns:1fr 1fr}
   .facts{grid-template-columns:1fr 1fr}
   .foot .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   .t3,.t4,.works,.revs,.facts,.form .row,.foot .wrap{grid-template-columns:1fr}
+  .work.wide{grid-column:auto;aspect-ratio:3/4}
+  .who-card{flex-direction:column;align-items:flex-start}
+  .who-card img{width:118px;height:150px}
   .score{grid-template-columns:1fr;text-align:center}
   .bars li{grid-template-columns:1fr;gap:5px;text-align:left}
   .bars em{margin-top:2px}
@@ -472,6 +522,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
   <nav class="nav" aria-label="Разделы сайта">
     <a href="#oklejka">Оклейка</a>
     <a href="#uslugi">Услуги</a>
+    <a href="#doposle">До и&nbsp;после</a>
     <a href="#raboty">Работы</a>
     <a href="#otzyvy">Отзывы</a>
     <a href="#kontakty">Контакты</a>
@@ -703,6 +754,21 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
   </div>
 </section>
 
+<!-- ===== ПОЧЕМУ СЕЙЧАС ===== -->
+<section class="band" id="sezon" aria-labelledby="sezon-t">
+  <div class="wrap">
+    <p class="kick">Почему сейчас</p>
+    <h2 id="sezon-t">Плёнку клеят до&nbsp;холодов, а&nbsp;не&nbsp;после</h2>
+    <p class="lead">Зимой по&nbsp;кузову бьёт то, ради чего плёнку и&nbsp;берут: песок с&nbsp;реагентами летит из-под колёс соседней машины и&nbsp;оставляет на&nbsp;лаке матовую пескоструйку и&nbsp;сколы. Плёнка, наклеенная в&nbsp;октябре, встречает этот сезон вместо вашего лака. Наклеенная в&nbsp;марте&nbsp;— уже по&nbsp;факту.</p>
+    <p class="say">В&nbsp;Москве реагенты на&nbsp;дорогах держатся примерно с&nbsp;ноября по&nbsp;март. Всё это время смесь песка и&nbsp;соли летит по&nbsp;кузову на&nbsp;каждой поездке&nbsp;— и&nbsp;именно она делает лак матовым раньше срока.<b>Поэтому оклейку берут осенью, а&nbsp;полировку — весной</b></p>
+    <ul class="pts">
+      <li><b>Лак под плёнку готовят один раз</b><span>Если сколы уже есть, перед оклейкой их убирают. Осенью на&nbsp;это есть время, весной вы приедете с&nbsp;бо́льшим списком.</span></li>
+      <li><b>Полировка — работа весенняя</b><span>Её делают, когда сезон реагентов позади. Сейчас она просто не&nbsp;доживёт до&nbsp;лета в&nbsp;том виде, за&nbsp;который вы заплатили.</span></li>
+      <li><b>Химчистка идёт круглый год</b><span>Зимой в&nbsp;салон приносят соль и&nbsp;грязь, так что это единственная услуга без&nbsp;сезона. Её берут вместе с&nbsp;оклейкой за&nbsp;один визит.</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ===== ЦЕНА И РАСЧЁТ ===== -->
 <section class="sec" id="ceny" aria-labelledby="ceny-t">
   <div class="wrap">
@@ -808,18 +874,26 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 <section class="sec alt" id="master" aria-labelledby="master-t">
   <div class="wrap two rev-order">
     <figure class="shot tall">
-      <img src="img/site/sclass.webp" alt="Mercedes-Benz S-класса в боксе Just Point Car под светодиодным сотовым потолком" width="600" height="800" loading="lazy">
-      <figcaption>Бокс студии на&nbsp;Талалихина: сотовый светодиодный потолок — на&nbsp;нём видно каждую риску</figcaption>
+      <img src="img/site/shop.webp" alt="Мастера Just Point Car за работой в боксе на Талалихина: BMW 5 серии с открытым капотом" width="600" height="800" loading="lazy">
+      <figcaption>Бокс на&nbsp;Талалихина в&nbsp;рабочий день</figcaption>
     </figure>
     <div class="txt">
       <p class="kick">Команда</p>
       <h2 id="master-t">Даниил и&nbsp;команда Just&nbsp;Point&nbsp;Car</h2>
       <p class="lead">В&nbsp;отзывах на&nbsp;Яндекс&nbsp;Картах клиенты называют мастера по&nbsp;имени&nbsp;— это и&nbsp;есть главная проверка: за&nbsp;результат отвечает конкретный человек, а&nbsp;не&nbsp;«компания». Запись и&nbsp;консультация идут напрямую у&nbsp;мастера.</p>
       <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>В&nbsp;четырёх отзывах мастера называют по&nbsp;имени</b><span>Так пишут, когда работу принимал конкретный человек, а&nbsp;не&nbsp;приёмка</span></div></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Персонал — 100%&nbsp;положительных оценок</b><span>34&nbsp;отзыва по&nbsp;этой теме на&nbsp;Яндекс&nbsp;Картах</span></div></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Объясняют, что и&nbsp;зачем</b><span>«Все объяснили, рассказали» — из&nbsp;отзыва Максима Мамичева</span></div></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>К&nbsp;ним приезжают коллеги по&nbsp;цеху</b><span>«Сам детейлер, люблю качественное обслуживание по&nbsp;технологии» — Yaroslav&nbsp;M.</span></div></li>
       </ul>
+      <div class="who-card">
+        <img src="img/site/master.webp" alt="Мастер Just Point Car в боксе студии, кадр из видео канала" width="178" height="320" loading="lazy">
+        <div>
+          <p>«Глубокая царапина&nbsp;— не&nbsp;всегда повод красить деталь. Да, вблизи следы повреждения останутся. Но&nbsp;правильная полировка и&nbsp;маскировка могут сделать их практически незаметными с&nbsp;расстояния».</p>
+          <small>Мастер студии в&nbsp;разборе про глубокие царапины&nbsp;— кадр из&nbsp;видео в&nbsp;канале, август&nbsp;2026</small>
+        </div>
+      </div>
       <div class="rev">
         <div class="who">
           <span class="ava" aria-hidden="true">Д</span>
@@ -827,6 +901,31 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
           <span class="stars"><i>★★★★★</i><small>22&nbsp;апреля</small></span>
         </div>
         <q>Обратился к ребятам JPC за услугой детейлинга автомобиля у мастера Дани, и остался в полном восторге!.. Даня дал несколько полезных советов по уходу за машиной, что также очень ценно</q>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ДО И ПОСЛЕ ===== -->
+<section class="sec" id="doposle" aria-labelledby="doposle-t">
+  <div class="wrap">
+    <p class="kick">До и после</p>
+    <h2 id="doposle-t">Renault Logan, пробег около 500&nbsp;000&nbsp;км</h2>
+    <p class="lead">Самая показательная химчистка из&nbsp;архива студии: машина, которую возили, пока она ездила, и&nbsp;не&nbsp;мыли внутри. Кадры сняты студией в&nbsp;один заезд, до&nbsp;работы и&nbsp;после неё.</p>
+    <div class="pairs">
+      <div class="pair">
+        <figure>
+          <div><span class="l">До</span><img src="img/site/ba-seat-before.webp" alt="Задний диван и пол Renault Logan до химчистки: въевшаяся грязь на обивке и мусор на полу" width="600" height="800" loading="lazy"></div>
+          <div><span class="l a">После</span><img src="img/site/ba-seat-after.webp" alt="Тот же задний диван Renault Logan после химчистки: чистая обивка и вымытый пол" width="600" height="800" loading="lazy"></div>
+        </figure>
+        <figcaption><b>Задний ряд и пол.</b> Обивка, ковролин и&nbsp;пороги&nbsp;— вычищены до&nbsp;фактуры ткани.</figcaption>
+      </div>
+      <div class="pair">
+        <figure>
+          <div><span class="l">До</span><img src="img/site/ba-dash-before.webp" alt="Передняя панель и руль Renault Logan до химчистки: серый налёт на пластике и засаленный руль" width="600" height="800" loading="lazy"></div>
+          <div><span class="l a">После</span><img src="img/site/ba-dash-after.webp" alt="Передняя панель и руль Renault Logan после химчистки: чистый матовый пластик" width="600" height="800" loading="lazy"></div>
+        </figure>
+        <figcaption><b>Панель и руль.</b> Пластик вернулся к&nbsp;матовому заводскому виду, руль&nbsp;— без&nbsp;засаленного глянца.</figcaption>
       </div>
     </div>
   </div>
@@ -844,7 +943,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
     </div>
     <p class="lead">От&nbsp;Mercedes S-класса и&nbsp;Porsche до&nbsp;ВАЗ&nbsp;2113 и&nbsp;Nissan&nbsp;Note. Каждой машине — свой объём работ; отчёты по&nbsp;ним студия выкладывает в&nbsp;канал.</p>
     <div class="works">
-      <figure class="work"><img src="img/site/glc-rear.webp" alt="Mercedes-Benz GLC 300 после полной оклейки кузова бронеплёнкой" width="600" height="800" loading="lazy"><figcaption><b>Mercedes-Benz GLC&nbsp;300</b><span>Полная оклейка кузова, тонировка задней полусферы, рояльный лак в&nbsp;салоне</span><em>Декабрь 2025</em></figcaption></figure>
+      <figure class="work wide"><img src="img/site/glc-rear.webp" alt="Mercedes-Benz GLC 300 после полной оклейки кузова бронеплёнкой" width="600" height="800" loading="lazy"><figcaption><b>Mercedes-Benz GLC&nbsp;300</b><span>Полная оклейка кузова, тонировка задней полусферы, рояльный лак в&nbsp;салоне</span><em>Декабрь 2025</em></figcaption></figure>
       <figure class="work"><img src="img/site/x5-zones.webp" alt="Синий BMW X5 после оклейки зон риска бронеплёнкой" width="600" height="800" loading="lazy"><figcaption><b>BMW&nbsp;X5</b><span>Оклейка зон риска, плёнка Spectroll&nbsp;premium 210&nbsp;мкм</span><em>Декабрь 2025</em></figcaption></figure>
       <figure class="work"><img src="img/site/gac.webp" alt="Тёмно-зелёный GAC после оклейки зон риска и керамического покрытия" width="600" height="800" loading="lazy"><figcaption><b>GAC</b><span>Зоны риска, атермальная тонировка передней полусферы, полировка и&nbsp;керамика в&nbsp;2&nbsp;слоя</span><em>Ноябрь 2025</em></figcaption></figure>
       <figure class="work"><img src="img/site/rav4.webp" alt="Чёрная Toyota RAV4 после оклейки зон риска и полного антихрома" width="600" height="800" loading="lazy"><figcaption><b>Toyota RAV4</b><span>Оклейка зон риска и&nbsp;полный антихром</span><em>Ноябрь 2025</em></figcaption></figure>
@@ -942,7 +1041,8 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
     <p class="kick">Вопросы</p>
     <h2 id="faq-t">Частые вопросы</h2>
     <div class="faq">
-      <details open><summary>Вы работаете только с&nbsp;премиум-авто?</summary><p>Нет. В&nbsp;отчётах студии рядом стоят Mercedes&nbsp;S-класса, Porsche&nbsp;Cayenne, Audi&nbsp;Q8&nbsp;— и&nbsp;ВАЗ&nbsp;2113, Nissan&nbsp;Note, Renault&nbsp;Logan с&nbsp;пробегом под&nbsp;500&nbsp;тысяч. Подход и&nbsp;материалы одинаковые, отличается только объём работ и&nbsp;цена.</p></details>
+      <details open><summary>Плёнку будет видно?</summary><p>Полиуретан прозрачный: он не&nbsp;меняет цвет кузова и&nbsp;не&nbsp;даёт эффекта «машина в&nbsp;плёнке». Видно её или нет, решают кромки&nbsp;— поэтому плёнку заводят подворотом за&nbsp;край детали, а&nbsp;где нужно, деталь снимают. Стык при таком монтаже уходит с&nbsp;видимой плоскости. Отдельная история&nbsp;— матовая и&nbsp;цветная плёнка: там внешний вид меняется намеренно, и&nbsp;это обсуждается заранее.</p></details>
+      <details><summary>Вы работаете только с&nbsp;премиум-авто?</summary><p>Нет. В&nbsp;отчётах студии рядом стоят Mercedes&nbsp;S-класса, Porsche&nbsp;Cayenne, Audi&nbsp;Q8&nbsp;— и&nbsp;ВАЗ&nbsp;2113, Nissan&nbsp;Note, Renault&nbsp;Logan с&nbsp;пробегом под&nbsp;500&nbsp;тысяч. Подход и&nbsp;материалы одинаковые, отличается только объём работ и&nbsp;цена.</p></details>
       <details><summary>Какая плёнка и&nbsp;какой толщины?</summary><p>На&nbsp;кузов&nbsp;— полиуретановая бронеплёнка Spectroll&nbsp;premium 210&nbsp;микрон, на&nbsp;фары&nbsp;— 190&nbsp;микрон. Обе прозрачные и&nbsp;снимаются без&nbsp;следа для&nbsp;заводского лака.</p></details>
       <details><summary>Сколько стоит оклейка?</summary><p>Точной цифры без&nbsp;машины нет: сумма зависит от&nbsp;модели, объёма и&nbsp;состояния лака. Пришлите фото&nbsp;— мастер посчитает и&nbsp;зафиксирует цену до&nbsp;начала работ. Прайс в&nbsp;карточке Яндекс&nbsp;Карт давно не&nbsp;обновлялся, поэтому ориентироваться на&nbsp;него не&nbsp;стоит.</p></details>
       <details><summary>У&nbsp;меня глубокая царапина — надо красить деталь?</summary><p>Не&nbsp;всегда. Вблизи следы повреждения останутся, но&nbsp;правильная полировка и&nbsp;маскировка делают их практически незаметными с&nbsp;расстояния. Приезжайте на&nbsp;осмотр&nbsp;— скажем честно, поможет полировка или тут действительно нужен маляр.</p></details>
@@ -1135,6 +1235,20 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
   });
   dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
   dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close() });
+})();
+
+/* секции проявляются при прокрутке; при prefers-reduced-motion выключено стилями */
+(function(){
+  var targets=document.querySelectorAll('main > section:not(.hero)');
+  if(!targets.length) return;
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  targets.forEach(function(s){ s.classList.add('rv') });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target) } });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.05});
+  targets.forEach(function(s){ io.observe(s) });
+  /* страховка: что бы ни случилось, через 3 с всё видно */
+  setTimeout(function(){ targets.forEach(function(s){ s.classList.add('in') }) },3000);
 })();
 </script>
 <script type="application/ld+json">
@@ -1346,6 +1460,14 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
  "@context": "https://schema.org",
  "@type": "FAQPage",
  "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Плёнку будет видно?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Полиуретан прозрачный: он не меняет цвет кузова и не даёт эффекта «машина в плёнке». Видно её или нет, решают кромки — поэтому плёнку заводят подворотом за край детали, а где нужно, деталь снимают. Стык при таком монтаже уходит с видимой плоскости. Отдельная история — матовая и цветная плёнка: там внешний вид меняется намеренно, и это обсуждается заранее."
+   }
+  },
   {
    "@type": "Question",
    "name": "Вы работаете только с премиум-авто?",
