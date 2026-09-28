@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Just Point Car — оклейка авто бронеплёнкой и детейлинг в Москве</title>
+<meta name="description" content="Детейлинг-студия Just Point Car, г. Москва, ул. Талалихина, 41, стр. 41, рядом с м. Волгоградский проспект. Оклейка кузова полиуретановой бронеплёнкой: полностью, зоны риска и фары. Химчистка салона. Ежедневно с 10:00 до 22:00. Рейтинг 5,0 на Яндекс Картах.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/v3/hero-after.webp" fetchpriority="high">
+<style>
+:root{
+  --bg:#0a0a0b;
+  --bg-2:#131315;
+  --line:rgba(255,255,255,.12);
+  --line-2:rgba(255,255,255,.26);
+  --text:#f2f2f0;
+  --muted:#a3a3a1;
+  --dim:#737371;
+  --led:#eef4ff;
+  --glow:rgba(214,230,255,.55);
+  --sans:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --disp:"Jost","Onest",system-ui,sans-serif;
+  --pad:clamp(16px,3.4vw,56px);
+  --head:80px;
+  --panel-w:clamp(120px,10.8vw,204px);
+  /* высота сцены: по высоте экрана, но так, чтобы машина и четыре панели влезли по ширине */
+  --stage-h:min(clamp(300px,calc(100svh - 332px),720px),calc((100vw - 2 * var(--pad) - 4 * var(--panel-w) - 56px) / 1.2));
+  --hex:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--led);outline-offset:3px}
+
+/* ---------- ШАПКА ---------- */
+.head{position:absolute;inset:0 0 auto;z-index:30;height:var(--head);display:flex;align-items:center;gap:clamp(20px,3vw,48px);padding:0 var(--pad)}
+.logo{display:flex;flex-direction:column;align-items:center;gap:7px;flex:none}
+.logo .mark{width:92px;height:auto}
+.logo .word{width:86px;height:auto;opacity:.75}
+.nav{display:flex;gap:clamp(18px,2.2vw,34px);margin:0 auto;font:500 14px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav a{transition:color .2s}
+.nav a:hover{color:var(--text)}
+.head-r{display:flex;align-items:center;gap:22px;flex:none}
+.phone{text-align:right;line-height:1.25}
+.phone b{display:block;font:600 17px/1.2 var(--disp);letter-spacing:.02em;white-space:nowrap}
+.phone small{font-size:12px;color:var(--dim);white-space:nowrap}
+.btn-o{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:46px;padding:0 24px;border:1px solid var(--line-2);border-radius:999px;font:500 13px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.btn-o:hover{border-color:var(--led);box-shadow:0 0 22px -6px var(--glow)}
+.head-r .btn-o.m{display:none}
+.icon-btn{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:50%;align-items:center;justify-content:center}
+.icon-btn svg{width:19px;height:19px}
+
+/* ---------- ПЕРВЫЙ ЭКРАН ---------- */
+.hero{position:relative;isolation:isolate;min-height:100svh;display:flex;flex-direction:column;padding-top:var(--head);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(38% 46% at 50% 58%,rgba(210,225,255,.075),transparent 70%),
+  radial-gradient(60% 30% at 50% 0%,rgba(255,255,255,.06),transparent 70%),
+  linear-gradient(180deg,#0d0d0f 0%,var(--bg) 60%,#070708 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.intro{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(6px,1.4vh,18px) var(--pad) 0}
+.eyebrow{display:flex;align-items:center;gap:14px;font:500 12px/1 var(--disp);letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--line-2)}
+
+/* заголовок в «скобках», как на референсе */
+.title{position:relative;margin-top:clamp(10px,1.8vh,20px);padding:clamp(12px,1.9vh,20px) clamp(26px,3vw,46px)}
+.title::before,.title::after{content:"";position:absolute;pointer-events:none;border:0 solid rgba(255,255,255,.72)}
+.title::before{left:0;top:0;width:52%;height:62%;border-width:1.5px 0 0 1.5px}
+.title::after{right:0;bottom:0;width:52%;height:62%;border-width:0 1.5px 1.5px 0}
+h1{font:700 clamp(30px,min(4.3vw,6.7vh),70px)/1.04 var(--disp);letter-spacing:.005em;text-transform:uppercase}
+h1 span{display:block}
+h1 .l1{color:#b9b9b7}
+h1 .l2{background:linear-gradient(180deg,#ffffff 30%,#c9ccd2 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{margin-top:clamp(8px,1.4vh,14px);font-size:clamp(14px,1.1vw,17px);color:var(--muted);letter-spacing:.01em}
+
+/* ---------- СЦЕНА: панели услуг + машина ---------- */
+.scene{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--pad);margin-top:calc(var(--stage-h) * -.075)}
+.svc{display:flex;align-items:center;gap:12px}
+.svc-l{justify-self:end;margin-right:4px}
+.svc-r{justify-self:start;margin-left:4px}
+.card{--sk:-9deg;--h:calc(var(--stage-h) * .5);position:relative;width:var(--panel-w);height:var(--h);flex:none}
+.card.inner{--h:calc(var(--stage-h) * .64)}
+.svc-r .card{--sk:9deg}
+.card a{position:absolute;inset:0;display:block;transform:skewX(var(--sk));overflow:hidden;border:1px solid var(--line);background:var(--bg-2);box-shadow:0 30px 60px -30px rgba(0,0,0,.9);transition:border-color .35s,box-shadow .35s}
+.card img{position:absolute;top:0;left:-30%;width:160%;max-width:none;height:100%;object-fit:cover;transform:skewX(calc(var(--sk) * -1)) scale(1.02);filter:saturate(.92) brightness(.8) contrast(1.04);transition:filter .5s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.card a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,9,.85) 0%,rgba(8,8,9,.12) 34%,rgba(8,8,9,0) 60%,rgba(8,8,9,.85) 100%)}
+.card-t{position:absolute;inset:0;z-index:2;transform:skewX(calc(var(--sk) * -1));display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:clamp(12px,1.8vh,20px) 8px}
+.card-t b{font:600 clamp(12px,1vw,17px)/1.15 var(--disp);letter-spacing:.07em;text-transform:uppercase}
+/* подпись и цена сдвигаются вслед за наклоном панели, чтобы не резаться краем */
+.card-t b{transform:translateX(calc(tan(var(--sk)) * (30px - var(--h) / 2)))}
+.card-t small{transform:translateX(calc(tan(var(--sk)) * (var(--h) / 2 - 26px)))}
+.card-t small{font:500 clamp(10px,.8vw,12px)/1 var(--disp);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:7px 9px;border:1px solid var(--line-2);border-radius:999px;background:rgba(10,10,11,.55);white-space:nowrap;transition:color .3s,border-color .3s}
+.card a:hover,.card a:focus-visible{border-color:rgba(238,244,255,.6);box-shadow:0 0 34px -10px var(--glow),0 30px 60px -30px rgba(0,0,0,.9)}
+.card a:hover img,.card a:focus-visible img{filter:saturate(1.08) brightness(.98) contrast(1.02);transform:skewX(calc(var(--sk) * -1)) scale(1.07)}
+.card a:hover small{color:var(--text);border-color:var(--led)}
+
+/* до / после */
+.stage{--pos:50%;position:relative;z-index:3;height:var(--stage-h);aspect-ratio:1200/1000;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;outline:none}
+.stage:focus-visible .handle::before{background:var(--led);box-shadow:0 0 0 4px var(--led)}
+.photo{position:absolute;inset:0;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 19%,#000 82%,transparent 100%),linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent 0,#000 19%,#000 82%,transparent 100%),linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+  mask-composite:intersect}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.photo .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+/* светодиодная линия — как трубки в их боксе */
+.split{position:absolute;top:9%;bottom:9%;left:var(--pos);width:2px;margin-left:-1px;pointer-events:none;
+  background:linear-gradient(180deg,transparent,#fff 14%,#fff 86%,transparent);
+  box-shadow:0 0 10px 1px var(--glow),0 0 34px 4px rgba(214,230,255,.28)}
+.handle{position:absolute;left:50%;top:54%;width:50px;height:44px;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;gap:10px;isolation:isolate}
+.handle::before,.handle::after{content:"";position:absolute;z-index:-1;clip-path:var(--hex)}
+.handle::before{inset:0;background:#fff}
+.handle::after{inset:1.5px;background:#0c0c0e}
+.handle svg{width:6px;height:10px}
+.tag{position:absolute;top:13%;z-index:2;padding:7px 12px;border:1px solid var(--line-2);border-radius:999px;background:rgba(10,10,11,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font:500 11px/1 var(--disp);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;pointer-events:none;transition:opacity .3s}
+.tag-b{left:15%;color:var(--muted)}
+.tag-a{right:15%;color:var(--text);border-color:rgba(238,244,255,.5)}
+.stage.edge-l .tag-b,.stage.edge-r .tag-a{opacity:0}
+
+/* ---------- КНОПКИ ---------- */
+.cta{position:relative;z-index:5;display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:0 var(--pad);margin-top:calc(var(--stage-h) * -.15)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:58px;padding:0 32px;border-radius:999px;font:600 14px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,box-shadow .25s,background-color .2s,border-color .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{color:#0b0b0c;background:linear-gradient(180deg,#ffffff,#d6d8dc);box-shadow:0 14px 40px -14px rgba(214,230,255,.7),inset 0 -1px 0 rgba(0,0,0,.15)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 18px 50px -12px rgba(214,230,255,.95),inset 0 -1px 0 rgba(0,0,0,.15)}
+.btn-ghost{border:1px solid rgba(255,255,255,.55);background:rgba(10,10,11,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:#fff;box-shadow:0 0 26px -8px var(--glow)}
+
+/* панели услуг под машиной — для планшета и телефона */
+.panels-m{display:none;grid-template-columns:repeat(4,1fr);gap:12px;padding:clamp(18px,3vw,28px) calc(var(--pad) + 10px) 0;position:relative;z-index:4}
+.panels-m .card{--h:clamp(140px,20vw,190px);width:auto}
+.panels-m .card:nth-child(n+3){--sk:9deg}
+
+/* ---------- НИЖНЯЯ ПЛАШКА ---------- */
+.bar{position:relative;z-index:5;margin-top:clamp(14px,2.2vh,26px);border-top:1px solid var(--line);background:rgba(18,18,20,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.bar ul{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;padding:0 var(--pad)}
+.bar li{display:flex;align-items:center;gap:13px;padding:clamp(11px,1.6vh,16px) 0 clamp(11px,1.6vh,16px) clamp(14px,1.6vw,24px);border-left:1px solid var(--line);min-width:0}
+.bar li:first-child{border-left:0;padding-left:0}
+.bar svg{width:20px;height:20px;flex:none;color:var(--muted)}
+.bar p{font-size:14px;line-height:1.3;min-width:0}
+.bar p span{display:block;font-size:12px;color:var(--dim)}
+.bar a{transition:color .2s}
+.bar a:hover{color:var(--led)}
+.demo{padding:12px var(--pad) 16px;font-size:11px;color:var(--dim);text-align:center}
+
+/* ---------- ДИАЛОГ ---------- */
+dialog{margin:auto;width:min(460px,calc(100% - 32px));padding:0;border:1px solid var(--line-2);border-radius:22px;background:#111113;color:var(--text);box-shadow:0 40px 120px -20px rgba(0,0,0,.9)}
+dialog::backdrop{background:rgba(5,5,6,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.dlg{position:relative;padding:34px 30px 28px}
+.dlg h2{font:700 24px/1.15 var(--disp);letter-spacing:.02em;text-transform:uppercase;padding-right:40px}
+.dlg p{margin-top:12px;color:var(--muted);font-size:15px}
+.dlg ol{margin:16px 0 0;padding-left:20px;color:var(--muted);font-size:15px}
+.dlg ol li{margin-top:4px}
+.dlg .acts{display:grid;gap:10px;margin-top:22px}
+.dlg .btn{width:100%;height:54px}
+.x{position:absolute;right:16px;top:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.x svg{width:16px;height:16px}
+
+/* ---------- ПОЯВЛЕНИЕ ---------- */
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.intro>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.intro>.title{animation-delay:.08s}.intro>.sub{animation-delay:.16s}
+.stage{animation:fade 1.3s ease .1s both}
+.card{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.card.inner{animation-delay:.35s}
+.card:not(.inner){animation-delay:.5s}
+.cta{animation:up .9s cubic-bezier(.2,.7,.2,1) .45s both}
+.bar{animation:fade 1s ease .6s both}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width:1280px) and (min-width:761px){
+  .bar ul{grid-template-columns:1.3fr 1fr 1fr}
+  .bar li.hours{display:none}
+}
+@media (max-width:1180px){
+  .nav{display:none}
+  .head-r{margin-left:auto}
+}
+@media (max-width:1100px){
+  :root{--stage-h:auto}
+  .scene{grid-template-columns:1fr;justify-items:center;margin-top:-10px;flex:none}
+  .scene .svc{display:none}
+  .stage{height:auto;width:min(100%,720px,calc((100svh - 340px) * 1.2))}
+  .cta{margin-top:-30px}
+  .panels-m{display:grid}
+}
+@media (max-width:760px){
+  :root{--head:66px;--pad:16px}
+  .logo .mark{width:70px}
+  .logo .word{width:66px}
+  .logo{gap:5px}
+  .phone,.head-r .btn-o{display:none}
+  .icon-btn{display:inline-flex}
+  .head-r{gap:10px}
+  .head-r .btn-o.m{display:inline-flex;height:44px;padding:0 16px;font-size:12px;letter-spacing:.1em}
+  .eyebrow{font-size:10px;letter-spacing:.24em;gap:10px}
+  .eyebrow::before,.eyebrow::after{width:20px}
+  .title{padding:12px 14px;margin-top:12px}
+  h1{font-size:clamp(21px,6.8vw,34px)}
+  .sub{font-size:14px;max-width:22em}
+  .scene{padding:0}
+  .stage{width:calc(100% + 24px);margin:0 -12px}
+  .tag{top:10%;font-size:10px;padding:6px 10px}
+  .tag-b{left:9%}.tag-a{right:9%}
+  .cta{flex-direction:column;align-items:stretch;margin-top:-22px}
+  .btn{height:56px;padding:0 20px;font-size:13px;letter-spacing:.1em}
+  .panels-m{grid-template-columns:1fr 1fr;padding:22px 26px 0;gap:12px 16px}
+  .panels-m .card{--h:150px}
+  .panels-m .card:nth-child(odd){--sk:-9deg}
+  .panels-m .card:nth-child(even){--sk:9deg}
+  .bar{margin-top:22px}
+  .bar ul{grid-template-columns:1fr 1fr}
+  .bar li{padding:14px 0 14px 14px}
+  .bar li:nth-child(3){border-left:0;padding-left:0}
+  .bar li:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:380px){
+  .bar ul{grid-template-columns:1fr}
+  .bar li,.bar li:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .bar li:first-child{border-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* ================= СТРАНИЦА НИЖЕ ПЕРВОГО ЭКРАНА ================= */
+.sec{position:relative;padding:clamp(52px,7vw,104px) var(--pad)}
+.sec.alt{background:linear-gradient(180deg,#0e0e10,#121214 55%,#0e0e10)}
+.sec.alt::before,.sec.tline::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--line-2) 22%,var(--line-2) 78%,transparent)}
+.wrap{max-width:1280px;margin:0 auto}
+.kick{display:inline-flex;align-items:center;gap:10px;font:500 11px/1 var(--disp);letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+.kick::before{content:"";width:22px;height:1px;background:var(--line-2)}
+h2{margin-top:16px;font:700 clamp(25px,3.1vw,46px)/1.08 var(--disp);letter-spacing:.005em;text-transform:uppercase;
+  background:linear-gradient(180deg,#fff 34%,#c4c7cd 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
+.lead{margin-top:16px;max-width:62ch;font-size:clamp(15px,1.15vw,17px);color:var(--muted)}
+.sec p a,.rev a{border-bottom:1px solid var(--line-2);transition:color .2s,border-color .2s}
+.sec p a:hover,.rev a:hover{color:var(--led);border-color:var(--led)}
+.head2{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+
+/* строка услуг */
+.strip{padding:clamp(22px,2.6vw,30px) var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c0c0e}
+.strip .wrap{display:flex;align-items:center;gap:clamp(14px,2vw,30px);flex-wrap:wrap}
+.strip .kick{flex:none}
+.strip ul{display:flex;flex-wrap:wrap;gap:8px}
+.strip a{display:inline-flex;height:36px;align-items:center;padding:0 16px;border:1px solid var(--line);border-radius:999px;font:500 12px/1 var(--disp);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s,border-color .2s,background-color .2s}
+.strip a:hover{color:var(--text);border-color:var(--line-2);background:rgba(255,255,255,.04)}
+
+/* две колонки текст+фото */
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,66px);align-items:center}
+.two.rev-order .txt{order:2}
+.shot{position:relative;border:1px solid var(--line);overflow:hidden;background:var(--bg-2);box-shadow:0 40px 90px -46px #000}
+.shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) brightness(.92) contrast(1.03)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;font-size:12px;color:#d6d8dc;background:linear-gradient(180deg,transparent,rgba(6,6,7,.92))}
+.shot.tall{aspect-ratio:3/4}
+.shot.wide{aspect-ratio:4/3}
+
+/* маркированные списки-галочки */
+.ticks{margin-top:26px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.ticks li{display:flex;gap:14px;align-items:flex-start;padding:15px 18px;background:var(--bg);font-size:15px}
+.ticks svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--led)}
+.ticks b{font-weight:600}
+.ticks span{display:block;color:var(--dim);font-size:13px;margin-top:3px}
+
+/* карточки-плитки */
+.tiles{display:grid;gap:14px;margin-top:34px}
+.t3{grid-template-columns:repeat(3,1fr)}
+.t4{grid-template-columns:repeat(4,1fr)}
+.tile{padding:24px 22px 26px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 60%),var(--bg-2);transition:border-color .25s,transform .25s}
+.tile:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.tile .n{font:600 12px/1 var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.tile h3{margin-top:14px}
+.tile p{margin-top:10px;font-size:14px;color:var(--muted)}
+.tile .more{display:inline-block;margin-top:14px;font:500 12px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+/* отзыв */
+.rev{margin-top:30px;max-width:720px;padding:22px 24px 24px;border:1px solid var(--line);background:var(--bg-2);border-left:2px solid rgba(238,244,255,.5)}
+.rev .who{display:flex;align-items:center;gap:13px}
+.rev .ava{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font:600 15px/1 var(--disp);color:var(--muted);background:#17171a}
+.rev .nm{min-width:0}
+.rev .nm b{display:block;font:600 14px/1.2 var(--disp);letter-spacing:.03em}
+.rev .nm small{display:block;margin-top:3px;font-size:11.5px;color:var(--dim)}
+.rev .stars{margin-left:auto;text-align:right;flex:none}
+.rev .stars i{font-style:normal;color:#ffd166;font-size:13px;letter-spacing:1px}
+.rev .stars small{display:block;margin-top:3px;font-size:11.5px;color:var(--dim)}
+.rev q{display:block;margin-top:15px;font-size:14.5px;line-height:1.6;color:#d8d8d6;quotes:"«" "»"}
+.rev.wide{max-width:none}
+
+/* сетка отзывов */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;align-items:start}
+.revs .rev{margin:0;max-width:none}
+
+/* слои плёнки */
+.layers{margin-top:30px;border:1px solid var(--line);background:var(--bg-2)}
+.layers li{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:13px 18px;border-top:1px solid var(--line);font-size:14px}
+.layers li:first-child{border-top:0}
+.layers li b{font-weight:500}
+.layers li i{font-style:normal;font:500 12px/1 var(--disp);letter-spacing:.1em;color:var(--dim);white-space:nowrap}
+.layers li.acc{background:linear-gradient(90deg,rgba(214,230,255,.09),transparent)}
+.layers li.acc b{color:var(--text);font-weight:600}
+
+/* шаги */
+.steps{counter-reset:s;display:grid;gap:1px;margin-top:34px;background:var(--line);border:1px solid var(--line)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 24px;background:var(--bg)}
+.step .num{counter-increment:s;font:700 13px/1 var(--disp);letter-spacing:.14em;color:var(--dim);padding-top:4px;white-space:nowrap}
+.step .num::before{content:"ШАГ " counter(s)}
+.step p{margin-top:8px;font-size:14px;color:var(--muted);max-width:74ch}
+
+/* работы */
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.work{position:relative;border:1px solid var(--line);background:var(--bg-2);overflow:hidden;aspect-ratio:3/4}
+.work img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.82) contrast(1.05);transition:filter .5s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.work:hover img{filter:saturate(1.04) brightness(.98);transform:scale(1.05)}
+.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 15px;background:linear-gradient(180deg,transparent,rgba(6,6,7,.93) 62%)}
+.work b{display:block;font:600 14px/1.2 var(--disp);letter-spacing:.03em}
+.work span{display:block;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.work em{display:block;margin-top:7px;font-style:normal;font:500 10.5px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+/* цифры-рейтинг */
+.score{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:34px;padding:clamp(24px,3vw,34px);border:1px solid var(--line);background:var(--bg-2)}
+.score .big{text-align:center}
+.score .big b{display:block;font:700 clamp(46px,6vw,78px)/1 var(--disp)}
+.score .big i{display:block;margin-top:8px;font-style:normal;color:#ffd166;letter-spacing:3px}
+.score .big small{display:block;margin-top:8px;font-size:12px;color:var(--dim)}
+.bars{display:grid;gap:11px;min-width:0}
+.bars li{display:grid;grid-template-columns:130px 1fr auto;gap:14px;align-items:center;font-size:13.5px}
+.bars .track{height:5px;background:rgba(255,255,255,.09);overflow:hidden}
+.bars .fill{display:block;height:100%;background:linear-gradient(90deg,#8ea6cc,#eef4ff)}
+.bars em{font-style:normal;color:var(--dim);font-size:12.5px;white-space:nowrap}
+
+/* форма */
+.form{margin-top:34px;padding:clamp(24px,3vw,34px);border:1px solid var(--line);background:var(--bg-2)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:block;margin-top:14px}
+.field:first-child,.form .row .field{margin-top:0}
+.field span{display:block;margin-bottom:7px;font:500 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.field input,.field select,.field textarea{width:100%;height:52px;padding:0 16px;border:1px solid var(--line-2);background:#0b0b0c;color:var(--text);font:400 15px/1 var(--sans);border-radius:0;transition:border-color .2s,box-shadow .2s}
+.field textarea{height:96px;padding:14px 16px;line-height:1.5;resize:vertical}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 23px,calc(100% - 14px) 23px;background-size:6px 6px;background-repeat:no-repeat}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--led);box-shadow:0 0 22px -8px var(--glow)}
+.agree{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:12.5px;color:var(--dim);line-height:1.45}
+.agree input{width:17px;height:17px;flex:none;margin-top:1px;accent-color:#c9d6ea}
+.form .btn{margin-top:20px;width:100%}
+.form .note{margin-top:13px;font-size:12.5px;color:var(--dim);text-align:center}
+
+/* FAQ */
+.faq{margin-top:34px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:20px 2px;cursor:pointer;list-style:none;font:600 clamp(15px,1.25vw,18px)/1.35 var(--disp);letter-spacing:.02em;transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:#fff}
+.faq summary::after{content:"";width:13px;height:13px;flex:none;border:solid var(--muted);border-width:0 1.5px 1.5px 0;transform:rotate(45deg) translateY(-3px);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.faq p{padding:0 2px 22px;max-width:80ch;font-size:14.5px;color:var(--muted)}
+
+/* гео */
+.geo-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.geo-tags li{padding:8px 14px;border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.facts li{padding:18px 20px;border:1px solid var(--line);background:var(--bg-2)}
+.facts b{display:block;font:600 15px/1.2 var(--disp);letter-spacing:.03em}
+.facts span{display:block;margin-top:7px;font-size:13px;color:var(--dim)}
+
+/* контакты */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;margin-top:34px}
+.clist{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.clist li{display:flex;gap:15px;padding:18px 20px;background:var(--bg)}
+.clist svg{width:20px;height:20px;flex:none;color:var(--muted);margin-top:2px}
+.clist b{display:block;font:600 15px/1.3 var(--disp);letter-spacing:.02em}
+.clist span{display:block;margin-top:5px;font-size:13px;color:var(--dim)}
+.clist a{transition:color .2s}
+.clist a:hover{color:var(--led)}
+.soc{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.soc a{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 18px;border:1px solid var(--line-2);border-radius:999px;font:500 12px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;transition:border-color .2s,box-shadow .2s}
+.soc a:hover{border-color:var(--led);box-shadow:0 0 22px -8px var(--glow)}
+.soc svg{width:17px;height:17px}
+
+/* подвал */
+.foot{padding:clamp(34px,4vw,54px) var(--pad) 0;border-top:1px solid var(--line);background:#09090a}
+.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,3vw,48px)}
+.foot p{font-size:13.5px;color:var(--muted);max-width:44ch}
+.foot h4{font:500 11px/1 var(--disp);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.foot li{margin-top:9px;font-size:13.5px;color:var(--muted)}
+.foot a:hover{color:var(--led)}
+.foot .demo{max-width:none;margin-top:clamp(28px,3vw,42px);border-top:1px solid var(--line);background:#09090a;color:var(--dim);font-size:11.5px;line-height:1.55}
+
+@media (max-width:1100px){
+  .two,.contact{grid-template-columns:1fr}
+  .two.rev-order .txt{order:0}
+  .two .shot{max-width:560px;width:100%}
+  .t4,.works{grid-template-columns:repeat(2,1fr)}
+  .revs{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .foot .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .t3,.t4,.works,.revs,.facts,.form .row,.foot .wrap{grid-template-columns:1fr}
+  .score{grid-template-columns:1fr;text-align:center}
+  .bars li{grid-template-columns:1fr;gap:5px;text-align:left}
+  .bars em{margin-top:2px}
+  .step{grid-template-columns:1fr;gap:8px}
+  .strip .wrap{gap:14px}
+  .rev{padding:18px 18px 20px}
+  .rev .stars{margin-left:0;width:100%;text-align:left;margin-top:4px}
+  .rev .who{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <a class="logo" href="#top" aria-label="Just Point Car, на главную">
+    <img class="mark" src="img/logo-mark.png" alt="" width="1040" height="494">
+    <img class="word" src="img/logo-word.png" alt="" width="1142" height="102">
+  </a>
+  <nav class="nav" aria-label="Разделы сайта">
+    <a href="#oklejka">Оклейка</a>
+    <a href="#uslugi">Услуги</a>
+    <a href="#raboty">Работы</a>
+    <a href="#otzyvy">Отзывы</a>
+    <a href="#kontakty">Контакты</a>
+  </nav>
+  <div class="head-r">
+    <div class="phone">
+      <b><a href="tel:+79852744510">+7&nbsp;(985)&nbsp;274-45-10</a></b>
+      <small>ежедневно с&nbsp;10:00 до&nbsp;22:00</small>
+    </div>
+    <a class="btn-o" href="https://t.me/Justpointcar" target="_blank" rel="noopener">Записаться</a>
+    <a class="icon-btn" href="tel:+79852744510" aria-label="Позвонить: +7 (985) 274-45-10">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    </a>
+    <a class="btn-o m" href="https://t.me/Justpointcar" target="_blank" rel="noopener">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+
+  <div class="intro">
+    <p class="eyebrow">Детейлинг-студия в&nbsp;Москве</p>
+    <div class="title">
+      <h1><span class="l1">Оклейка кузова</span> <span class="l2">бронеплёнкой</span></h1>
+    </div>
+    <p class="sub">— Защитим лак от&nbsp;сколов, песка и&nbsp;зимних&nbsp;реагентов —</p>
+  </div>
+
+  <div class="scene">
+    <ul class="svc svc-l" aria-label="Услуги">
+      <li class="card"><a href="#uslugi"><img src="img/v3/svc-full.webp" alt="Мастер разглаживает полиуретановую бронеплёнку на крыле чёрного Mercedes" width="640" height="960"><span class="card-t"><b>Полная<br>оклейка</b><small>плёнка 210&nbsp;мкм</small></span></a></li>
+      <li class="card inner"><a href="#uslugi"><img src="img/v3/svc-zones.webp" alt="Синий BMW X5 после оклейки зон риска бронеплёнкой Spectroll 210 мкм" width="640" height="960"><span class="card-t"><b>Зоны риска</b><small>расчёт по&nbsp;фото</small></span></a></li>
+    </ul>
+
+    <figure class="stage" id="ba" tabindex="0" role="slider" aria-label="Сравнение: кузов без плёнки и в бронеплёнке" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="photo">
+        <img class="after" src="img/v3/hero-after.webp" alt="Чёрный Mercedes-Benz GLC 300 в полной бронеплёнке в боксе Just Point Car, в капоте отражается сотовый светодиодный потолок" width="1200" height="1000" fetchpriority="high">
+        <img class="before" src="img/v3/hero-before.webp" alt="" width="1200" height="1000">
+      </div>
+      <span class="tag tag-b">Без плёнки</span>
+      <span class="tag tag-a">В&nbsp;бронеплёнке</span>
+      <div class="split" aria-hidden="true">
+        <span class="handle">
+          <svg viewBox="0 0 6 10" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1 1 5l4 4"/></svg>
+          <svg viewBox="0 0 6 10" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m1 1 4 4-4 4"/></svg>
+        </span>
+      </div>
+    </figure>
+
+    <ul class="svc svc-r" aria-label="Услуги">
+      <li class="card inner"><a href="#uslugi"><img src="img/v3/svc-lights.webp" alt="Мастер оклеивает фару BMW 5 серии полиуретановой плёнкой" width="640" height="960"><span class="card-t"><b>Оклейка фар</b><small>плёнка 190&nbsp;мкм</small></span></a></li>
+      <li class="card"><a href="#uslugi"><img src="img/v3/svc-clean.webp" alt="Красное кожаное сиденье Porsche Cayenne после химчистки салона" width="640" height="960"><span class="card-t"><b>Химчистка<br>салона</b><small>с&nbsp;разбором</small></span></a></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <button class="btn btn-main" type="button" data-open="calc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      Рассчитать оклейку по&nbsp;фото
+    </button>
+    <a class="btn btn-ghost" href="https://t.me/Justpointcar" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>
+      Записаться в&nbsp;Telegram
+    </a>
+  </div>
+
+  <ul class="panels-m" aria-label="Услуги">
+    <li class="card"><a href="#uslugi"><img src="img/v3/svc-full.webp" alt="Мастер разглаживает полиуретановую бронеплёнку на крыле чёрного Mercedes" width="640" height="960" loading="lazy"><span class="card-t"><b>Полная<br>оклейка</b><small>плёнка 210&nbsp;мкм</small></span></a></li>
+    <li class="card"><a href="#uslugi"><img src="img/v3/svc-zones.webp" alt="Синий BMW X5 после оклейки зон риска бронеплёнкой Spectroll 210 мкм" width="640" height="960" loading="lazy"><span class="card-t"><b>Зоны риска</b><small>расчёт по&nbsp;фото</small></span></a></li>
+    <li class="card"><a href="#uslugi"><img src="img/v3/svc-lights.webp" alt="Мастер оклеивает фару BMW 5 серии полиуретановой плёнкой" width="640" height="960" loading="lazy"><span class="card-t"><b>Оклейка фар</b><small>плёнка 190&nbsp;мкм</small></span></a></li>
+    <li class="card"><a href="#uslugi"><img src="img/v3/svc-clean.webp" alt="Красное кожаное сиденье Porsche Cayenne после химчистки салона" width="640" height="960" loading="lazy"><span class="card-t"><b>Химчистка<br>салона</b><small>с&nbsp;разбором</small></span></a></li>
+  </ul>
+
+  <div class="bar" id="fakty">
+    <ul>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <p><a href="https://yandex.ru/maps/org/just_point_car/222922385914/" target="_blank" rel="noopener">г.&nbsp;Москва, ул.&nbsp;Талалихина, 41,&nbsp;стр.&nbsp;41</a><span>930&nbsp;м от&nbsp;м.&nbsp;Волгоградский проспект</span></p>
+      </li>
+      <li class="hours">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p>Ежедневно 10:00–22:00<span>работаем по&nbsp;записи</span></p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        <p><a href="tel:+79852744510">+7&nbsp;(985)&nbsp;274-45-10</a><span>звонок или&nbsp;сообщение</span></p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>
+        <p><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">5,0&nbsp;на&nbsp;Яндекс Картах</a><span>56&nbsp;оценок, «Хорошее место&nbsp;2026»</span></p>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ===== СТРОКА УСЛУГ ===== -->
+<section class="strip">
+  <div class="wrap">
+    <p class="kick">Услуги студии</p>
+    <ul>
+      <li><a href="#oklejka">Оклейка плёнкой</a></li>
+      <li><a href="#uslugi">Полировка</a></li>
+      <li><a href="#uslugi">Керамика</a></li>
+      <li><a href="#uslugi">Химчистка</a></li>
+      <li><a href="#uslugi">Тонировка</a></li>
+      <li><a href="#uslugi">Антидождь</a></li>
+      <li><a href="#uslugi">Полировка фар</a></li>
+      <li><a href="#uslugi">Детейлинг-мойка</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== НАГРАДА И РЕЙТИНГ ===== -->
+<section class="sec alt" id="reputaciya">
+  <div class="wrap">
+    <p class="kick">Хорошее место 2026</p>
+    <h2>Награда Яндекс&nbsp;Карт за&nbsp;оценки клиентов</h2>
+    <p class="lead">Её получают организации, которым пользователи Яндекса ставят самые высокие оценки. У&nbsp;студии 5,0 из&nbsp;5,0, 56&nbsp;оценок и&nbsp;52&nbsp;отзыва&nbsp;— ни&nbsp;одного ниже пяти звёзд за&nbsp;всё время.</p>
+
+    <div class="score">
+      <div class="big">
+        <b>5,0</b>
+        <i>★★★★★</i>
+        <small>56&nbsp;оценок · 52&nbsp;отзыва</small>
+      </div>
+      <ul class="bars">
+        <li><span>Мойка</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 34&nbsp;отзыва</em></li>
+        <li><span>Персонал</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 34&nbsp;отзыва</em></li>
+        <li><span>Полировка</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 23&nbsp;отзыва</em></li>
+        <li><span>Время ожидания</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 17&nbsp;отзывов</em></li>
+        <li><span>Ремонт</span><span class="track"><span class="fill" style="width:100%"></span></span><em>100% · 10&nbsp;отзывов</em></li>
+      </ul>
+    </div>
+    <p class="lead" style="margin-top:22px;font-size:13.5px">Оценки по&nbsp;темам&nbsp;— так их считает сам Яндекс на&nbsp;основе текстов отзывов. <a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">Открыть карточку на&nbsp;Яндекс&nbsp;Картах</a></p>
+  </div>
+</section>
+
+<!-- ===== ГЛАВНАЯ УСЛУГА: ОКЛЕЙКА ===== -->
+<section class="sec" id="oklejka">
+  <div class="wrap two">
+    <div class="txt">
+      <p class="kick">Главная услуга</p>
+      <h2>Оклейка защитной плёнкой</h2>
+      <p class="lead">Полиуретан принимает на&nbsp;себя сколы, песок и&nbsp;реагенты&nbsp;— заводской лак остаётся нетронутым. Клеим с&nbsp;детализацией: подворотами по&nbsp;кромкам и&nbsp;снятием деталей там, где это нужно.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Полная оклейка кузова</b><span>Весь кузов в&nbsp;прозрачный полиуретан 210&nbsp;мкм</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Зоны риска</b><span>Капот, бампер, крылья, зеркала, стойки&nbsp;— то, во&nbsp;что летит с&nbsp;дороги</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Оклейка фар</b><span>Плёнка 190&nbsp;мкм: защита оптики от&nbsp;пескоструя и&nbsp;камней</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Антихром и крыша в&nbsp;чёрный полиуретан</b><span>Меняем облик машины без&nbsp;покраски и&nbsp;обратимо</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Рояльный лак и&nbsp;мониторы в&nbsp;салоне</b><span>Глянцевые панели перестают ловить царапины от&nbsp;колец и&nbsp;ключей</span></div></li>
+      </ul>
+      <div class="rev">
+        <div class="who">
+          <span class="ava" aria-hidden="true">М</span>
+          <span class="nm"><b>Маргарита А.</b><small>Знаток города 6&nbsp;уровня · Яндекс&nbsp;Карты</small></span>
+          <span class="stars"><i>★★★★★</i><small>23&nbsp;января</small></span>
+        </div>
+        <q>Делали оклейку зон риска, работа произведена качественно и быстро) день в день уже забрала свою малышку</q>
+      </div>
+    </div>
+    <figure class="shot tall">
+      <img src="img/site/glc-full.webp" alt="Чёрный Mercedes-Benz GLC 300 после полной оклейки кузова бронеплёнкой в боксе Just Point Car" width="600" height="800" loading="lazy">
+      <figcaption>Mercedes-Benz GLC&nbsp;300 — полная оклейка кузова, декабрь&nbsp;2025</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== МАТЕРИАЛЫ ===== -->
+<section class="sec alt" id="plenka">
+  <div class="wrap two rev-order">
+    <figure class="shot tall">
+      <img src="img/site/lights.webp" alt="Мастер оклеивает фару BMW 5 серии полиуретановой бронеплёнкой" width="600" height="800" loading="lazy">
+      <figcaption>Оклейка фар BMW&nbsp;530 — полиуретан 190&nbsp;мкм</figcaption>
+    </figure>
+    <div class="txt">
+      <p class="kick">Материалы</p>
+      <h2>Полиуретан 210&nbsp;мкм на&nbsp;кузов, 190&nbsp;— на&nbsp;фары</h2>
+      <p class="lead">На&nbsp;кузов идёт полиуретановая бронеплёнка Spectroll&nbsp;premium 210&nbsp;микрон, на&nbsp;фары&nbsp;— 190&nbsp;микрон. Это не&nbsp;виниловая плёнка: полиуретан тянется, затягивает мелкие царапины от&nbsp;тепла и&nbsp;не&nbsp;желтеет под&nbsp;солнцем.</p>
+      <ul class="layers">
+        <li><b>Защитный лайнер</b><i>снимается</i></li>
+        <li class="acc"><b>Полиуретан Spectroll&nbsp;premium — кузов</b><i>210&nbsp;мкм</i></li>
+        <li class="acc"><b>Полиуретан — фары</b><i>190&nbsp;мкм</i></li>
+        <li><b>Клеевой слой</b><i>снимается без&nbsp;следа</i></li>
+        <li><b>Заводской лак вашего авто</b><i>остаётся нетронутым</i></li>
+      </ul>
+      <p class="lead" style="font-size:13.5px">Толщина и&nbsp;марка взяты из&nbsp;постов студии в&nbsp;канале <a href="https://t.me/JPCDetailing" target="_blank" rel="noopener">@JPCDetailing</a>&nbsp;— там же выкладывают процесс по&nbsp;каждой машине.</p>
+      <div class="rev">
+        <div class="who">
+          <span class="ava" aria-hidden="true">Д</span>
+          <span class="nm"><b>Денис Г.</b><small>Знаток города 4&nbsp;уровня · Яндекс&nbsp;Карты</small></span>
+          <span class="stars"><i>★★★★★</i><small>14&nbsp;августа</small></span>
+        </div>
+        <q>Оклеивал у ребят зоны риска, все сделано в лучшем виде. В подарок отполировали заднюю оптику. Рекомендую</q>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ЦЕНА И РАСЧЁТ ===== -->
+<section class="sec" id="ceny">
+  <div class="wrap">
+    <p class="kick">Цена</p>
+    <h2>Считаем по&nbsp;фото и&nbsp;называем цену до&nbsp;старта</h2>
+    <p class="lead">Универсального ценника на&nbsp;оклейку нет: всё зависит от&nbsp;модели, объёма и&nbsp;состояния лака. Поэтому смотрим фото, говорим, что реально нужно вашей машине, и&nbsp;фиксируем сумму до&nbsp;начала работ.</p>
+    <div class="tiles t3">
+      <div class="tile">
+        <p class="n">01</p>
+        <h3>Цена известна заранее</h3>
+        <p>Сколько посчитали по&nbsp;фото и&nbsp;осмотру&nbsp;— столько и&nbsp;в&nbsp;итоге. По&nbsp;ходу работ ничего не&nbsp;дописываем.</p>
+      </div>
+      <div class="tile">
+        <p class="n">02</p>
+        <h3>Не&nbsp;продаём лишнего</h3>
+        <p>Если зон риска достаточно и&nbsp;полный кузов вам не&nbsp;нужен&nbsp;— так и&nbsp;скажем. Если лак под&nbsp;плёнку надо готовить&nbsp;— тоже скажем заранее.</p>
+      </div>
+      <div class="tile">
+        <p class="n">03</p>
+        <h3>Работаем и&nbsp;с&nbsp;бюджетом</h3>
+        <p>В&nbsp;боксе рядом стоят Porsche&nbsp;Cayenne и&nbsp;ВАЗ&nbsp;2113. Подход и&nbsp;материалы одинаковые, разный только объём работ.</p>
+      </div>
+    </div>
+    <div class="rev wide">
+      <div class="who">
+        <span class="ava" aria-hidden="true">Н</span>
+        <span class="nm"><b>Нина Сац</b><small>Знаток города 4&nbsp;уровня · Яндекс&nbsp;Карты</small></span>
+        <span class="stars"><i>★★★★★</i><small>25&nbsp;июня 2025</small></span>
+      </div>
+      <q>Работа выполнена максимально быстро и качественно. Специалисты общаются вежливо, культурно. Отношение к клиенту отличное. Ценовая политика соответствует качеству.</q>
+    </div>
+    <p class="lead" style="font-size:13px;margin-top:22px">Прайс в&nbsp;карточке Яндекс&nbsp;Карт помечен как «давно не&nbsp;обновлялось», поэтому на&nbsp;сайте цифры не&nbsp;публикуются&nbsp;— актуальную сумму называет мастер после фото.</p>
+  </div>
+</section>
+
+<!-- ===== ПЕРСОНАЛЬНЫЙ РАСЧЁТ ===== -->
+<section class="sec alt" id="raschet">
+  <div class="wrap two">
+    <div class="txt">
+      <p class="kick">Персональный расчёт</p>
+      <h2>Посчитаем точную цену под&nbsp;ваше авто</h2>
+      <p class="lead">Оставьте марку и&nbsp;что нужно сделать. Мастер посмотрит фото, скажет, что выгоднее&nbsp;— весь кузов или только зоны риска, и&nbsp;назовёт стоимость со&nbsp;сроком.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Машину спереди, сбоку и&nbsp;сзади</b><span>При дневном свете, целиком в&nbsp;кадре</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Крупно — сколы и&nbsp;царапины</b><span>Если они есть: перед оклейкой лак лучше привести в&nbsp;порядок</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Салон — если нужна химчистка</b><span>Сиденья, ковролин, потолок, руль</span></div></li>
+      </ul>
+    </div>
+    <form class="form" novalidate>
+      <div class="row">
+        <label class="field"><span>Как вас зовут</span><input type="text" name="name" autocomplete="name" placeholder="Имя"></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+      </div>
+      <label class="field"><span>Марка и модель</span><input type="text" name="car" placeholder="Например, Mercedes-Benz GLC 300"></label>
+      <label class="field"><span>Какая услуга интересует</span>
+        <select name="service">
+          <option>Оклейка бронеплёнкой — полный кузов</option>
+          <option>Оклейка бронеплёнкой — зоны риска</option>
+          <option>Оклейка фар</option>
+          <option>Антихром / крыша в чёрный полиуретан</option>
+          <option>Полировка кузова</option>
+          <option>Керамическое покрытие</option>
+          <option>Химчистка салона</option>
+          <option>Тонировка стёкол</option>
+          <option>Антидождь и скраб остекления</option>
+          <option>Полировка фар</option>
+          <option>Детейлинг-мойка</option>
+          <option>Пока не знаю — нужна консультация</option>
+        </select>
+      </label>
+      <label class="agree"><input type="checkbox" name="agree"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
+      <button class="btn btn-main" type="button" data-open="calc">Уточнить цену для&nbsp;своего авто</button>
+      <p class="note">Это демонстрационный макет — форма ничего не&nbsp;отправляет. Кнопка откроет способы связи со&nbsp;студией.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== ПРОЦЕСС ===== -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <p class="kick">Как проходит работа</p>
+    <h2>От&nbsp;заявки до&nbsp;выдачи</h2>
+    <p class="lead">Пять шагов, и&nbsp;на&nbsp;каждом вы понимаете, что происходит с&nbsp;машиной и&nbsp;сколько это стоит.</p>
+    <div class="steps">
+      <div class="step"><div class="num"></div><div><h3>Фото и&nbsp;предварительная оценка</h3><p>Присылаете снимки в&nbsp;мессенджер. Мастер смотрит состояние лака и&nbsp;говорит, что имеет смысл делать, а&nbsp;что&nbsp;— лишнее.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>Осмотр и&nbsp;согласование</h3><p>Приезжаете на&nbsp;осмотр, подбираете удобный день сдачи. Фиксируем перечень работ, итоговую сумму и&nbsp;срок.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>Работа и&nbsp;обратная связь</h3><p>Пока машина в&nbsp;боксе, держим вас в&nbsp;курсе, а&nbsp;процесс по&nbsp;многим авто выкладываем в&nbsp;канал <a href="https://t.me/JPCDetailing" target="_blank" rel="noopener">@JPCDetailing</a>.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>Приёмка</h3><p>Принимаете работу в&nbsp;боксе под&nbsp;светодиодным светом&nbsp;— на&nbsp;нём видно и&nbsp;плёнку, и&nbsp;качество полировки.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>Уход после</h3><p>Рассказываем, как мыть и&nbsp;чем обслуживать покрытие, чтобы керамика и&nbsp;плёнка отработали свой срок.</p></div></div>
+    </div>
+    <div class="rev wide">
+      <div class="who">
+        <span class="ava" aria-hidden="true">Э</span>
+        <span class="nm"><b>Эмир А.</b><small>Знаток города 3&nbsp;уровня · Яндекс&nbsp;Карты</small></span>
+        <span class="stars"><i>★★★★★</i><small>16&nbsp;августа</small></span>
+      </div>
+      <q>Договорился на удобный для меня день сдачи авто, Даниил выполнил все работы качественно и в срок. Все оговоренные моменты и нюансы были учтены… Смело можно обращаться и не переживать за результат</q>
+    </div>
+  </div>
+</section>
+
+<!-- ===== МАСТЕР ===== -->
+<section class="sec alt" id="master">
+  <div class="wrap two rev-order">
+    <figure class="shot tall">
+      <img src="img/site/sclass.webp" alt="Mercedes-Benz S-класса в боксе Just Point Car под светодиодным сотовым потолком" width="600" height="800" loading="lazy">
+      <figcaption>Бокс студии на&nbsp;Талалихина: сотовый светодиодный потолок — на&nbsp;нём видно каждую риску</figcaption>
+    </figure>
+    <div class="txt">
+      <p class="kick">Команда</p>
+      <h2>Даниил и&nbsp;команда Just&nbsp;Point&nbsp;Car</h2>
+      <p class="lead">В&nbsp;отзывах на&nbsp;Яндекс&nbsp;Картах клиенты называют мастера по&nbsp;имени&nbsp;— это и&nbsp;есть главная проверка: за&nbsp;результат отвечает конкретный человек, а&nbsp;не&nbsp;«компания». Запись и&nbsp;консультация идут напрямую у&nbsp;мастера.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Персонал — 100%&nbsp;положительных оценок</b><span>34&nbsp;отзыва по&nbsp;этой теме на&nbsp;Яндекс&nbsp;Картах</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Объясняют, что и&nbsp;зачем</b><span>«Все объяснили, рассказали» — из&nbsp;отзыва Максима Мамичева</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>К&nbsp;ним приезжают коллеги по&nbsp;цеху</b><span>«Сам детейлер, люблю качественное обслуживание по&nbsp;технологии» — Yaroslav&nbsp;M.</span></div></li>
+      </ul>
+      <div class="rev">
+        <div class="who">
+          <span class="ava" aria-hidden="true">Д</span>
+          <span class="nm"><b>Даниил Романович</b><small>Знаток города 4&nbsp;уровня · Яндекс&nbsp;Карты</small></span>
+          <span class="stars"><i>★★★★★</i><small>22&nbsp;апреля</small></span>
+        </div>
+        <q>Обратился к ребятам JPC за услугой детейлинга автомобиля у мастера Дани, и остался в полном восторге!.. Даня дал несколько полезных советов по уходу за машиной, что также очень ценно</q>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== РАБОТЫ ===== -->
+<section class="sec" id="raboty">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kick">Работы</p>
+        <h2>Что проходит через бокс</h2>
+      </div>
+      <a class="btn-o" href="https://t.me/JPCDetailing" target="_blank" rel="noopener">Весь архив в&nbsp;Telegram</a>
+    </div>
+    <p class="lead">От&nbsp;Mercedes S-класса и&nbsp;Porsche до&nbsp;ВАЗ&nbsp;2113 и&nbsp;Nissan&nbsp;Note. Каждой машине — свой объём работ; отчёты по&nbsp;ним студия выкладывает в&nbsp;канал.</p>
+    <div class="works">
+      <figure class="work"><img src="img/site/glc-rear.webp" alt="Mercedes-Benz GLC 300 после полной оклейки кузова бронеплёнкой" width="600" height="800" loading="lazy"><figcaption><b>Mercedes-Benz GLC&nbsp;300</b><span>Полная оклейка кузова, тонировка задней полусферы, рояльный лак в&nbsp;салоне</span><em>Декабрь 2025</em></figcaption></figure>
+      <figure class="work"><img src="img/site/x5-zones.webp" alt="Синий BMW X5 после оклейки зон риска бронеплёнкой" width="600" height="800" loading="lazy"><figcaption><b>BMW&nbsp;X5</b><span>Оклейка зон риска, плёнка Spectroll&nbsp;premium 210&nbsp;мкм</span><em>Декабрь 2025</em></figcaption></figure>
+      <figure class="work"><img src="img/site/gac.webp" alt="Тёмно-зелёный GAC после оклейки зон риска и керамического покрытия" width="600" height="800" loading="lazy"><figcaption><b>GAC</b><span>Зоны риска, атермальная тонировка передней полусферы, полировка и&nbsp;керамика в&nbsp;2&nbsp;слоя</span><em>Ноябрь 2025</em></figcaption></figure>
+      <figure class="work"><img src="img/site/rav4.webp" alt="Чёрная Toyota RAV4 после оклейки зон риска и полного антихрома" width="600" height="800" loading="lazy"><figcaption><b>Toyota RAV4</b><span>Оклейка зон риска и&nbsp;полный антихром</span><em>Ноябрь 2025</em></figcaption></figure>
+      <figure class="work"><img src="img/site/amg-gt.webp" alt="Mercedes-AMG в боксе студии после полировки и керамики" width="600" height="800" loading="lazy"><figcaption><b>Mercedes-Benz SL&nbsp;63</b><span>Полировка с&nbsp;покрытием керамикой</span><em>Май 2026</em></figcaption></figure>
+      <figure class="work"><img src="img/site/cayenne.webp" alt="Красный кожаный салон Porsche Cayenne после химчистки" width="600" height="800" loading="lazy"><figcaption><b>Porsche Cayenne&nbsp;Turbo</b><span>Химчистка салона, крем для&nbsp;кожи, чистка кузова от&nbsp;битума, антидождь</span><em>Июль 2025</em></figcaption></figure>
+      <figure class="work"><img src="img/site/tt-yellow.webp" alt="Жёлтая Audi TT в боксе студии перед выставкой" width="600" height="800" loading="lazy"><figcaption><b>Audi&nbsp;TT</b><span>Подготовка к&nbsp;фестивалю клуба Audi&nbsp;TT: подкапотка, оклейка фар, полировка с&nbsp;керамикой</span><em>Июль 2026</em></figcaption></figure>
+      <figure class="work"><img src="img/site/vaz.webp" alt="ВАЗ 2113 в боксе Just Point Car после полировки и керамики" width="600" height="800" loading="lazy"><figcaption><b>ВАЗ&nbsp;2113</b><span>Полировка с&nbsp;керамикой, скраб остекления от&nbsp;водного камня, антидождь, химчистка</span><em>Сентябрь 2026</em></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ОТЗЫВЫ ===== -->
+<section class="sec alt" id="otzyvy">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kick">Отзывы</p>
+        <h2>Что говорят клиенты</h2>
+      </div>
+      <a class="btn-o" href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">Все&nbsp;52 отзыва</a>
+    </div>
+    <p class="lead">Отзывы приведены слово в&nbsp;слово с&nbsp;Яндекс&nbsp;Карт. Мы&nbsp;не&nbsp;выбираем, что показать: на&nbsp;Картах лежат все&nbsp;52, включая те, что сюда не&nbsp;поместились.</p>
+    <div class="revs">
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">С</span><span class="nm"><b>Сергей Лавровский</b><small>Знаток города 7&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>3&nbsp;июля 2025</small></span></div>
+        <q>Честно говоря, до этого думал, что детейлинг — «разводилово» за мои деньги. Но результат превзошел ВСЕ мои ожидания!.. Спасибо, что изменили мою точку зрения насчёт детейлинга!</q>
+      </div>
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">К</span><span class="nm"><b>Кирилл</b><small>Знаток города 4&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>19&nbsp;сентября</small></span></div>
+        <q>Отличный детейлинг, делал полировку/керамику и хим.чистку… Все в срок, как и договаривались. UPD: Прошло пол года, керамика на месте, авто сияет</q>
+      </div>
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">А</span><span class="nm"><b>Александр Александров</b><small>Знаток города 9&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>15&nbsp;августа</small></span></div>
+        <q>Однозначно рекомендую! Качественно, оперативно, с регулярной обратной связью!.. Адекватная цена за качественную химчистку, мойку подкапотного пространства и детейлинг мойку</q>
+      </div>
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">Д</span><span class="nm"><b>Дмитрий П.</b><small>Знаток города 3&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>24&nbsp;июня 2025</small></span></div>
+        <q>Полировал Santa Fe — результат огонь. Кузов блестит, как будто только с конвейера. Никаких голограмм, всё чётко и по технологии</q>
+      </div>
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">А</span><span class="nm"><b>Андрей</b><small>Знаток города 5&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>4&nbsp;сентября 2025</small></span></div>
+        <q>Сделал химчистку салона + мойку автомобиля. Такой чистой я никогда не видел свой автомобиль)) Теперь это мой фаворит среди химчисток тачки… Теперь это наше семейное место))</q>
+      </div>
+      <div class="rev">
+        <div class="who"><span class="ava" aria-hidden="true">O</span><span class="nm"><b>OD</b><small>Знаток города 5&nbsp;уровня</small></span><span class="stars"><i>★★★★★</i><small>25&nbsp;ноября 2025</small></span></div>
+        <q>Искал много детейлингов кто сможет затонировать такое огромное стекло, все отказывались, позвонил этим ребятам сказали сделают, и реально сделали!!</q>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОДГОТОВКА К ВЫСТАВКАМ ===== -->
+<section class="sec" id="vystavki">
+  <div class="wrap two">
+    <div class="txt">
+      <p class="kick">Отдельная история</p>
+      <h2>Готовим машины к&nbsp;выставкам и&nbsp;после гонок</h2>
+      <p class="lead">Перед фестивалем клуба Audi&nbsp;TT 1&nbsp;августа на&nbsp;«Трёх вокзалах Депо» через бокс прошли сразу несколько клубных машин&nbsp;— включая приехавшие из&nbsp;Казани. После этапа RDRC в&nbsp;студию заезжал гоночный автомобиль команды Level&nbsp;Performance.</p>
+      <p class="lead">Выставочная подготовка&nbsp;— это отдельный уровень внимания: мойка подкапотного пространства, оклейка фар в&nbsp;полиуретан, восстановительная полировка кузова и&nbsp;керамика, чтобы машина держала блеск весь день на&nbsp;площадке.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Подкапотное пространство</b><span>Вымытый мотор&nbsp;— первое, что открывают на&nbsp;выставке</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Восстановительная полировка</b><span>Убираем голограммы и&nbsp;матовость, возвращаем глубину цвета</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Керамика перед площадкой</b><span>Блеск держится весь день, пыль не&nbsp;липнет</span></div></li>
+      </ul>
+    </div>
+    <figure class="shot tall">
+      <img src="img/site/tt-blue.webp" alt="Голубая Audi TT Coupe в боксе Just Point Car при подготовке к выставке" width="600" height="800" loading="lazy">
+      <figcaption>Audi&nbsp;TT — подготовка к&nbsp;фестивалю клуба, июль&nbsp;2026</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== ОСТАЛЬНЫЕ УСЛУГИ ===== -->
+<section class="sec alt" id="uslugi">
+  <div class="wrap">
+    <p class="kick">Что ещё делаем</p>
+    <h2>Студия закрывает машину целиком</h2>
+    <p class="lead">Оклейка&nbsp;— главная услуга, но&nbsp;чаще всего машину привозят на&nbsp;комплекс: снаружи и&nbsp;внутри за&nbsp;один визит.</p>
+    <div class="tiles t4">
+      <div class="tile"><h3>Полировка кузова</h3><p>Восстановительная полировка: убираем царапины, голограммы и&nbsp;матовость. Глубокие риски маскируем так, что с&nbsp;пары шагов их не&nbsp;видно&nbsp;— это часто дешевле покраски детали.</p></div>
+      <div class="tile"><h3>Керамическое покрытие</h3><p>Наносим в&nbsp;два слоя. Глубокий блеск и&nbsp;гидрофоб: вода скатывается, грязь держится хуже, мыть приходится реже.</p></div>
+      <div class="tile"><h3>Химчистка салона</h3><p>С&nbsp;разбором, если нужно: ткань, кожа, пластик, потолок. На&nbsp;кожу после чистки наносим крем&nbsp;— чистая кожа матовая, без&nbsp;засаленного глянца.</p></div>
+      <div class="tile"><h3>Тонировка стёкол</h3><p>Атермальная плёнка на&nbsp;переднюю полусферу, LLumar на&nbsp;заднюю. Берёмся и&nbsp;за&nbsp;нестандартные большие стёкла.</p></div>
+      <div class="tile"><h3>Скраб остекления и&nbsp;антидождь</h3><p>Снимаем водный камень со&nbsp;стёкол и&nbsp;наносим антидождь&nbsp;— в&nbsp;ливень лобовое остаётся чистым.</p></div>
+      <div class="tile"><h3>Полировка фар</h3><p>Возвращаем оптике прозрачность, при желании сразу закрываем плёнкой, чтобы помутнение не&nbsp;вернулось.</p></div>
+      <div class="tile"><h3>Детейлинг-мойка и&nbsp;подкапотка</h3><p>Комплексная мойка с&nbsp;чисткой дисков от&nbsp;тормозной пыли и&nbsp;металловкраплений, снятие битума, мойка моторного отсека.</p></div>
+      <div class="tile"><h3>Подарочный сертификат</h3><p>На&nbsp;химчистку, полировку и&nbsp;керамику&nbsp;— по&nbsp;ним к&nbsp;нам уже приезжали. Номинал и&nbsp;состав подбираем под&nbsp;бюджет.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <p class="kick">Вопросы</p>
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details open><summary>Вы работаете только с&nbsp;премиум-авто?</summary><p>Нет. В&nbsp;отчётах студии рядом стоят Mercedes&nbsp;S-класса, Porsche&nbsp;Cayenne, Audi&nbsp;Q8&nbsp;— и&nbsp;ВАЗ&nbsp;2113, Nissan&nbsp;Note, Renault&nbsp;Logan с&nbsp;пробегом под&nbsp;500&nbsp;тысяч. Подход и&nbsp;материалы одинаковые, отличается только объём работ и&nbsp;цена.</p></details>
+      <details><summary>Какая плёнка и&nbsp;какой толщины?</summary><p>На&nbsp;кузов&nbsp;— полиуретановая бронеплёнка Spectroll&nbsp;premium 210&nbsp;микрон, на&nbsp;фары&nbsp;— 190&nbsp;микрон. Обе прозрачные и&nbsp;снимаются без&nbsp;следа для&nbsp;заводского лака.</p></details>
+      <details><summary>Сколько стоит оклейка?</summary><p>Точной цифры без&nbsp;машины нет: сумма зависит от&nbsp;модели, объёма и&nbsp;состояния лака. Пришлите фото&nbsp;— мастер посчитает и&nbsp;зафиксирует цену до&nbsp;начала работ. Прайс в&nbsp;карточке Яндекс&nbsp;Карт давно не&nbsp;обновлялся, поэтому ориентироваться на&nbsp;него не&nbsp;стоит.</p></details>
+      <details><summary>У&nbsp;меня глубокая царапина — надо красить деталь?</summary><p>Не&nbsp;всегда. Вблизи следы повреждения останутся, но&nbsp;правильная полировка и&nbsp;маскировка делают их практически незаметными с&nbsp;расстояния. Приезжайте на&nbsp;осмотр&nbsp;— скажем честно, поможет полировка или тут действительно нужен маляр.</p></details>
+      <details><summary>Успеете за&nbsp;день?</summary><p>Зависит от&nbsp;объёма. Зоны риска и&nbsp;химчистку часто отдают в&nbsp;тот&nbsp;же день&nbsp;— «день в&nbsp;день уже забрала свою малышку», из&nbsp;отзыва Маргариты&nbsp;А. Полная оклейка кузова и&nbsp;комплекс с&nbsp;керамикой занимают больше времени; срок называем на&nbsp;осмотре.</p></details>
+      <details><summary>Керамика долго держится?</summary><p>Из&nbsp;отзыва Кирилла спустя полгода: «керамика на&nbsp;месте, авто сияет». Срок зависит от&nbsp;пробега и&nbsp;того, как машину моют&nbsp;— рекомендации по&nbsp;уходу даём при&nbsp;выдаче.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ГЕО ===== -->
+<section class="sec alt" id="geo">
+  <div class="wrap">
+    <p class="kick">Как добраться</p>
+    <h2>Удобно заехать с&nbsp;юго-востока Москвы</h2>
+    <p class="lead">Студия на&nbsp;Талалихина, 41, стр.&nbsp;41&nbsp;— 930&nbsp;метров от&nbsp;метро Волгоградский проспект и&nbsp;370&nbsp;метров от&nbsp;МЦД&nbsp;«Мясокомбинат».</p>
+    <ul class="geo-tags">
+      <li>Таганский район</li><li>Нижегородский</li><li>Лефортово</li><li>Дубровка</li><li>Пролетарская</li><li>Волгоградский проспект</li><li>Текстильщики</li><li>Печатники</li><li>Кузьминки</li><li>Люблино</li>
+    </ul>
+    <ul class="facts">
+      <li><b>Парковка у&nbsp;бокса</b><span>По&nbsp;данным Яндекс&nbsp;Карт вход доступен на&nbsp;коляске</span></li>
+      <li><b>Оплата картой и&nbsp;наличными</b><span>Плюс подарочные сертификаты</span></li>
+      <li><b>Wi-Fi в&nbsp;студии</b><span>Если ждёте машину на&nbsp;месте</span></li>
+      <li><b>Только по&nbsp;записи</b><span>Ежедневно с&nbsp;10:00 до&nbsp;22:00</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== КОНТАКТЫ ===== -->
+<section class="sec" id="kontakty">
+  <div class="wrap">
+    <p class="kick">Записаться</p>
+    <h2>Оставьте заявку&nbsp;— посчитаем и&nbsp;перезвоним</h2>
+    <div class="contact">
+      <div>
+        <ul class="clist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><b><a href="https://yandex.ru/maps/org/just_point_car/222922385914/" target="_blank" rel="noopener">Москва, ул.&nbsp;Талалихина, 41,&nbsp;стр.&nbsp;41</a></b><span>м.&nbsp;Волгоградский проспект — 930&nbsp;м, МЦД&nbsp;«Мясокомбинат» — 370&nbsp;м</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <div><b><a href="tel:+79852744510">+7&nbsp;(985)&nbsp;274-45-10</a></b><span>Звонок или сообщение в&nbsp;мессенджер</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><b>Ежедневно 10:00–22:00</b><span>Работаем по&nbsp;предварительной записи</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>
+            <div><b><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">5,0 на&nbsp;Яндекс&nbsp;Картах</a></b><span>56&nbsp;оценок, 52&nbsp;отзыва, «Хорошее место&nbsp;2026»</span></div>
+          </li>
+        </ul>
+        <div class="soc">
+          <a href="https://t.me/Justpointcar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Запись в&nbsp;Telegram</a>
+          <a href="https://t.me/JPCDetailing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Канал с&nbsp;работами</a>
+          <a href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Канал в&nbsp;MAX</a>
+        </div>
+        <p class="lead" style="font-size:12.5px;margin-top:18px">В&nbsp;описании Telegram-канала адрес указан как 41,&nbsp;стр.&nbsp;40. На&nbsp;сайте использован адрес из&nbsp;карточки Яндекс&nbsp;Карт&nbsp;— 41,&nbsp;стр.&nbsp;41; перед первым визитом лучше уточнить у&nbsp;студии.</p>
+      </div>
+
+      <form class="form" style="margin-top:0" novalidate>
+        <div class="row">
+          <label class="field"><span>Как вас зовут</span><input type="text" name="name2" autocomplete="name" placeholder="Имя"></label>
+          <label class="field"><span>Телефон</span><input type="tel" name="phone2" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+        </div>
+        <label class="field"><span>Марка и модель</span><input type="text" name="car2" placeholder="Например, BMW X5"></label>
+        <label class="field"><span>Что нужно сделать</span><textarea name="task" placeholder="Коротко: оклейка зон риска, химчистка, полировка с керамикой…"></textarea></label>
+        <label class="agree"><input type="checkbox" name="agree2"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
+        <button class="btn btn-main" type="button" data-open="calc">Отправить заявку</button>
+        <p class="note">Демонстрационный макет: данные никуда не&nbsp;уходят.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top" style="flex-direction:row;align-items:center;gap:12px;justify-content:flex-start" aria-label="Just Point Car">
+        <img class="mark" src="img/logo-mark.png" alt="" width="1040" height="494" style="width:64px" loading="lazy">
+        <img class="word" src="img/logo-word.png" alt="" width="1142" height="102" style="width:88px" loading="lazy">
+      </a>
+      <p style="margin-top:16px">Детейлинг-студия Just&nbsp;Point&nbsp;Car на&nbsp;Талалихина: оклейка кузова полиуретановой бронеплёнкой, полировка, керамическое покрытие, химчистка салона, тонировка и&nbsp;антидождь.</p>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="https://yandex.ru/maps/org/just_point_car/222922385914/" target="_blank" rel="noopener">Москва, ул.&nbsp;Талалихина, 41,&nbsp;стр.&nbsp;41</a></li>
+        <li>м.&nbsp;Волгоградский проспект, МЦД&nbsp;«Мясокомбинат»</li>
+        <li><a href="tel:+79852744510">+7&nbsp;(985)&nbsp;274-45-10</a></li>
+        <li>Ежедневно 10:00–22:00, по&nbsp;записи</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Мы на площадках</h4>
+      <ul>
+        <li><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">Яндекс&nbsp;Карты · 5,0 / 52&nbsp;отзыва</a></li>
+        <li><a href="https://t.me/JPCDetailing" target="_blank" rel="noopener">Telegram-канал @JPCDetailing</a></li>
+        <li><a href="https://t.me/Justpointcar" target="_blank" rel="noopener">Запись — @Justpointcar</a></li>
+        <li><a href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Канал в&nbsp;MAX</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="demo">Демонстрационный концепт сайта. Не&nbsp;официальный сайт студии Just&nbsp;Point&nbsp;Car. Данные о&nbsp;студии, отзывы и&nbsp;фотографии работ взяты из&nbsp;карточки Яндекс&nbsp;Карт и&nbsp;канала&nbsp;@JPCDetailing, проверены 28&nbsp;сентября 2026&nbsp;года.</p>
+</footer>
+
+
+<dialog id="calc" aria-labelledby="calc-t">
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2 id="calc-t">Расчёт по&nbsp;фото</h2>
+    <p>Сфотографируйте машину и&nbsp;отправьте снимки нам в&nbsp;мессенджер. Мастер посмотрит состояние лака, подскажет, что выгоднее защитить&nbsp;— весь кузов или только зоны риска, и&nbsp;назовёт стоимость.</p>
+    <ol>
+      <li>Машину спереди, сбоку и&nbsp;сзади при дневном свете.</li>
+      <li>Крупно&nbsp;— сколы и&nbsp;царапины, если они уже есть: перед оклейкой их лучше убрать.</li>
+      <li>Салон, если нужна химчистка.</li>
+    </ol>
+    <div class="acts">
+      <a class="btn btn-main" href="https://t.me/Justpointcar" target="_blank" rel="noopener">Отправить в&nbsp;Telegram</a>
+      <a class="btn btn-ghost" href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Отправить в&nbsp;MAX</a>
+      <a class="btn btn-ghost" href="tel:+79852744510">Позвонить</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* шторка «до / после»: линия идёт за курсором, на телефоне — за пальцем */
+(function(){
+  var st=document.getElementById('ba'); if(!st) return;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=97, target=50, raf=0, dragging=false, touched=false;
+  function paint(){
+    st.style.setProperty('--pos',cur.toFixed(2)+'%');
+    st.classList.toggle('edge-l',cur<24); st.classList.toggle('edge-r',cur>76);
+    st.setAttribute('aria-valuenow',Math.round(cur));
+  }
+  function loop(){
+    var d=target-cur; cur+=d*(dragging?.35:.075);
+    if(Math.abs(d)<.05) cur=target;
+    paint();
+    raf=cur===target?0:requestAnimationFrame(loop);
+  }
+  function go(v,instant){
+    target=Math.max(3,Math.min(97,v));
+    if(instant||reduce){cur=target;paint();return}
+    if(!raf) raf=requestAnimationFrame(loop);
+  }
+  function pct(e){var r=st.getBoundingClientRect(); return (e.clientX-r.left)/r.width*100}
+  st.addEventListener('pointermove',function(e){
+    if(e.pointerType==='mouse'||dragging){touched=true;go(pct(e))}
+  });
+  st.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse') go(50) });
+  st.addEventListener('pointerdown',function(e){
+    if(e.pointerType!=='mouse'){dragging=true;touched=true;go(pct(e))}
+  });
+  addEventListener('pointerup',function(){dragging=false});
+  addEventListener('pointercancel',function(){dragging=false});
+  st.addEventListener('keydown',function(e){
+    var k=e.key, v=target;
+    if(k==='ArrowLeft'||k==='ArrowDown') v-=5; else if(k==='ArrowRight'||k==='ArrowUp') v+=5;
+    else if(k==='Home') v=3; else if(k==='End') v=97; else return;
+    e.preventDefault(); touched=true; go(v,true);
+  });
+  /* при загрузке почти весь кузов тусклый, потом «полировка» проходит до середины */
+  if(reduce){cur=50;paint();return}
+  paint();
+  setTimeout(function(){ if(!touched) go(50) },700);
+})();
+
+/* диалог «Расчёт по фото» */
+(function(){
+  var dlg=document.getElementById('calc');
+  document.querySelectorAll('[data-open]').forEach(function(b){
+    b.addEventListener('click',function(){ if(dlg.showModal) dlg.showModal(); else location.href='https://t.me/Justpointcar' });
+  });
+  dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close() });
+})();
+</script>
+</body>
+</html>

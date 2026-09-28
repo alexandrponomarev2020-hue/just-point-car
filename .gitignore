@@ -1,0 +1,20 @@
+# исходники и исследование — в публикацию не идут
+src/
+video/
+tests/
+img/glc.jpg
+img/gv80.webp
+
+# прежние версии страницы
+index.before-full-site.html
+index.before-wrap-hero.html
+
+.DS_Store
+
+# заготовки, на странице пока не используются
+img/site/clean-dirty.webp
+img/site/clean-seat.webp
+img/site/m4.webp
+img/site/tt-engine.webp
+img/site/tt-outdoor.webp
+img/site/x5-black.webp
