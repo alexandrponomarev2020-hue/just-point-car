@@ -285,6 +285,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 
 /* две колонки текст+фото */
 .two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,66px);align-items:center}
+.two>*{min-width:0}
 .two.rev-order .txt{order:2}
 .shot{position:relative;border:1px solid var(--line);overflow:hidden;background:var(--bg-2);box-shadow:0 40px 90px -46px #000}
 .shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) brightness(.92) contrast(1.03)}
@@ -379,8 +380,12 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--led);box-shadow:0 0 22px -8px var(--glow)}
 .agree{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:12.5px;color:var(--dim);line-height:1.45}
 .agree input{width:17px;height:17px;flex:none;margin-top:1px;accent-color:#c9d6ea}
+.hp{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .form .btn{margin-top:20px;width:100%}
 .form .note{margin-top:13px;font-size:12.5px;color:var(--dim);text-align:center}
+.form .note.is-success{color:var(--led)}
+.form .note.is-error{color:#f0a4a4}
+.form .btn:disabled{cursor:wait;opacity:.62;transform:none}
 
 /* FAQ */
 .faq{margin-top:34px;border-top:1px solid var(--line)}
@@ -816,12 +821,14 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><div><b>Салон — если нужна химчистка</b><span>Сиденья, ковролин, потолок, руль</span></div></li>
       </ul>
     </div>
-    <form class="form" novalidate>
+    <form class="form" action="api/lead.php" method="post" accept-charset="UTF-8" data-lead-form novalidate>
+      <input type="hidden" name="source" value="Персональный расчёт">
+      <label class="hp" aria-hidden="true">Не заполняйте<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <div class="row">
-        <label class="field"><span>Как вас зовут</span><input type="text" name="name" autocomplete="name" placeholder="Имя"></label>
-        <label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+        <label class="field"><span>Как вас зовут</span><input type="text" name="name" autocomplete="name" placeholder="Имя" maxlength="80" required></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" maxlength="30" required></label>
       </div>
-      <label class="field"><span>Марка и модель</span><input type="text" name="car" placeholder="Например, Mercedes-Benz GLC 300"></label>
+      <label class="field"><span>Марка и модель</span><input type="text" name="car" placeholder="Например, Mercedes-Benz GLC 300" maxlength="120" required></label>
       <label class="field"><span>Какая услуга интересует</span>
         <select name="service">
           <option>Оклейка бронеплёнкой — полный кузов</option>
@@ -838,9 +845,9 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
           <option>Пока не знаю — нужна консультация</option>
         </select>
       </label>
-      <label class="agree"><input type="checkbox" name="agree"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
-      <button class="btn btn-main" type="button" data-open="calc">Уточнить цену для&nbsp;своего авто</button>
-      <p class="note">Это демонстрационный макет — форма ничего не&nbsp;отправляет. Кнопка откроет способы связи со&nbsp;студией.</p>
+      <label class="agree"><input type="checkbox" name="agree" value="1" required><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
+      <button class="btn btn-main" type="submit">Уточнить цену для&nbsp;своего авто</button>
+      <p class="note" data-form-status aria-live="polite">Ответим по телефону или в&nbsp;Telegram.</p>
     </form>
   </div>
 </section>
@@ -1075,16 +1082,18 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
     <p class="kick">Записаться</p>
     <h2 id="kontakty-t">Оставьте заявку&nbsp;— посчитаем и&nbsp;перезвоним</h2>
     <div class="contact">
-    <form class="form" style="margin-top:0" novalidate>
+    <form class="form" action="api/lead.php" method="post" accept-charset="UTF-8" style="margin-top:0" data-lead-form novalidate>
+      <input type="hidden" name="source" value="Контакты">
+      <label class="hp" aria-hidden="true">Не заполняйте<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <div class="row">
-        <label class="field"><span>Как вас зовут</span><input type="text" name="name2" autocomplete="name" placeholder="Имя"></label>
-        <label class="field"><span>Телефон</span><input type="tel" name="phone2" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+        <label class="field"><span>Как вас зовут</span><input type="text" name="name" autocomplete="name" placeholder="Имя" maxlength="80" required></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" maxlength="30" required></label>
       </div>
-      <label class="field"><span>Марка и модель</span><input type="text" name="car2" placeholder="Например, BMW X5"></label>
-      <label class="field"><span>Что нужно сделать</span><textarea name="task" placeholder="Коротко: оклейка зон риска, химчистка, полировка с керамикой…"></textarea></label>
-      <label class="agree"><input type="checkbox" name="agree2"><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
-      <button class="btn btn-main" type="button" data-open="calc">Отправить заявку</button>
-      <p class="note">Демонстрационный макет: данные никуда не&nbsp;уходят.</p>
+      <label class="field"><span>Марка и модель</span><input type="text" name="car" placeholder="Например, BMW X5" maxlength="120" required></label>
+      <label class="field"><span>Что нужно сделать</span><textarea name="message" maxlength="1000" placeholder="Коротко: оклейка зон риска, химчистка, полировка с керамикой…"></textarea></label>
+      <label class="agree"><input type="checkbox" name="agree" value="1" required><span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю политику конфиденциальности</span></label>
+      <button class="btn btn-main" type="submit">Отправить заявку</button>
+      <p class="note" data-form-status aria-live="polite">Ответим по телефону или в&nbsp;Telegram.</p>
       </form>
 
       <div class="map">
@@ -1116,11 +1125,12 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
             <div><b><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">5,0 на&nbsp;Яндекс&nbsp;Картах</a></b><span>56&nbsp;оценок, 52&nbsp;отзыва, «Хорошее место&nbsp;2026»</span></div>
           </li>
         </ul>
-        <p class="lead" style="font-size:12.5px;margin-top:18px">В&nbsp;описании Telegram-канала адрес указан как 41,&nbsp;стр.&nbsp;40. На&nbsp;сайте использован адрес из&nbsp;карточки Яндекс&nbsp;Карт&nbsp;— 41,&nbsp;стр.&nbsp;41; перед первым визитом лучше уточнить у&nbsp;студии.</p>
       </div>
       <div>
         <div class="soc">
+          <a href="mailto:justpointcar@yandex.ru">justpointcar@yandex.ru</a>
           <a href="https://t.me/Justpointcar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Запись в&nbsp;Telegram</a>
+          <a href="https://t.me/Danyaa73" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Написать Даниилу</a>
           <a href="https://t.me/JPCDetailing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.8.8s.6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14.1c.3-1.2-.5-1.8-1.4-1.4ZM8.9 13.8l9-5.7c.4-.3.8-.1.5.2l-7.4 6.7-.3 3.2-1.8-4.4Z"/></svg>Канал с&nbsp;работами</a>
           <a href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Канал в&nbsp;MAX</a>
         </div>
@@ -1138,6 +1148,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
         <img class="word" src="img/logo-word.png" alt="" width="1142" height="102" style="width:88px" loading="lazy">
       </a>
       <p style="margin-top:16px">Детейлинг-студия Just&nbsp;Point&nbsp;Car на&nbsp;Талалихина: оклейка кузова полиуретановой бронеплёнкой, полировка, керамическое покрытие, химчистка салона, тонировка и&nbsp;антидождь.</p>
+      <p class="legal">ИП Богачев Даниил Игоревич<br>ИНН 771915485540</p>
     </div>
     <div>
       <h4>Контакты</h4>
@@ -1145,6 +1156,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
         <li><a href="https://yandex.ru/maps/org/just_point_car/222922385914/" target="_blank" rel="noopener">Москва, ул.&nbsp;Талалихина, 41,&nbsp;стр.&nbsp;41</a></li>
         <li>м.&nbsp;Волгоградский проспект, МЦД&nbsp;«Мясокомбинат»</li>
         <li><a href="tel:+79852744510">+7&nbsp;(985)&nbsp;274-45-10</a></li>
+        <li><a href="mailto:justpointcar@yandex.ru">justpointcar@yandex.ru</a></li>
         <li>Ежедневно 10:00–22:00, по&nbsp;записи</li>
       </ul>
     </div>
@@ -1154,6 +1166,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
         <li><a href="https://yandex.ru/maps/org/just_point_car/222922385914/reviews/" target="_blank" rel="noopener">Яндекс&nbsp;Карты · 5,0 / 52&nbsp;отзыва</a></li>
         <li><a href="https://t.me/JPCDetailing" target="_blank" rel="noopener">Telegram-канал @JPCDetailing</a></li>
         <li><a href="https://t.me/Justpointcar" target="_blank" rel="noopener">Запись — @Justpointcar</a></li>
+        <li><a href="https://t.me/Danyaa73" target="_blank" rel="noopener">Даниил — @Danyaa73</a></li>
         <li><a href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Канал в&nbsp;MAX</a></li>
       </ul>
     </div>
@@ -1176,6 +1189,7 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
     </ol>
     <div class="acts">
       <a class="btn btn-main" href="https://t.me/Justpointcar" target="_blank" rel="noopener">Отправить в&nbsp;Telegram</a>
+      <a class="btn btn-ghost" href="https://t.me/Danyaa73" target="_blank" rel="noopener">Написать Даниилу</a>
       <a class="btn btn-ghost" href="https://max.ru/join/z-BaZQpPchjuDj-knPMvMS_0qoBANdl140ZAOaPWAkM" target="_blank" rel="noopener">Отправить в&nbsp;MAX</a>
       <a class="btn btn-ghost" href="tel:+79852744510">Позвонить</a>
     </div>
@@ -1234,6 +1248,59 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
   });
   dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
   dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close() });
+})();
+
+/* отправка заявок через PHP-обработчик на хостинге */
+(function(){
+  var isDemo=location.hostname.endsWith('.github.io');
+  document.querySelectorAll('[data-lead-form]').forEach(function(form){
+    var status=form.querySelector('[data-form-status]');
+    var submit=form.querySelector('button[type="submit"]');
+
+    function setStatus(message,state){
+      status.textContent=message;
+      status.classList.toggle('is-success',state==='success');
+      status.classList.toggle('is-error',state==='error');
+    }
+
+    if(isDemo) setStatus('Демоверсия: форма не отправляет данные. Для записи свяжитесь с нами в Telegram или по телефону.','');
+
+    form.addEventListener('submit',async function(event){
+      event.preventDefault();
+      if(!form.checkValidity()){
+        setStatus('Заполните обязательные поля и подтвердите согласие.','error');
+        form.reportValidity();
+        return;
+      }
+
+      if(isDemo){
+        setStatus('Данные не отправлены: это демоверсия. Выберите удобный способ связи в открывшемся окне.','');
+        document.getElementById('calc').showModal();
+        return;
+      }
+
+      submit.disabled=true;
+      submit.setAttribute('aria-busy','true');
+      setStatus('Отправляем заявку…','pending');
+
+      try{
+        var response=await fetch(form.action,{
+          method:'POST',
+          body:new FormData(form),
+          headers:{'Accept':'application/json'}
+        });
+        var result=await response.json().catch(function(){return {ok:false}});
+        if(!response.ok||!result.ok) throw new Error('request_failed');
+        form.reset();
+        setStatus('Заявка отправлена. Мастер свяжется с вами.','success');
+      }catch(error){
+        setStatus('Не удалось отправить. Напишите нам в Telegram или позвоните.','error');
+      }finally{
+        submit.disabled=false;
+        submit.removeAttribute('aria-busy');
+      }
+    });
+  });
 })();
 
 /* секции проявляются при прокрутке; при prefers-reduced-motion выключено стилями */
@@ -1310,10 +1377,12 @@ h3{font:600 clamp(16px,1.35vw,20px)/1.2 var(--disp);letter-spacing:.03em}
    "closes": "22:00"
   }
  ],
+ "email": "justpointcar@yandex.ru",
  "sameAs": [
   "https://yandex.ru/maps/org/just_point_car/222922385914/",
   "https://t.me/JPCDetailing",
-  "https://t.me/Justpointcar"
+  "https://t.me/Justpointcar",
+  "https://t.me/Danyaa73"
  ],
  "aggregateRating": {
   "@type": "AggregateRating",

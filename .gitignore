@@ -1,7 +1,6 @@
 # исходники и исследование — в публикацию не идут
 src/
 video/
-tests/
 img/glc.jpg
 img/gv80.webp
 
@@ -19,3 +18,14 @@ img/site/tt-engine.webp
 img/site/tt-outdoor.webp
 img/site/x5-black.webp
 .claude/
+
+# Private configuration and generated files
+jpc-secrets.php
+.env
+.env.*
+!.env.example
+release/
+output/
+.playwright-cli/
+__pycache__/
+*.pyc
